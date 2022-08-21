@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %} {% block content %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lobby</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{% static 'styles/main.css' %}"
+    />
+  </head>
+  <body>
+    <section id="form-container">
+      <img id="logo" src="{% static 'images/chat-icon.svg' %}" />
+
+      <div id="welcome-message">
+        <h1>Welcome to MyChat</h1>
+        <p>A group video calling platform made just for you!</p>
+      </div>
+
+      <!-- 응시자 로그인 -->
+      <form id="form">
+        <div class="field-wrapper">
+          <div class="form-field">
+            <label>Room:</label>
+            <input
+              name="room"
+              placeholder="Enter a room name..."
+              style="text-transform: uppercase"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Name:</label>
+            <input
+              name="name"
+              placeholder="Enter your name..."
+              style="text-transform: uppercase"
+            />
+          </div>
+
+          <div class="form-field">
+            <input type="submit" value="Join Stream" />
+          </div>
+        </div>
+      </form>
+
+      <!-- 감독관 로그인 -->
+      <form id="supervisorForm">
+        <div class="field-wrapper">
+          <div class="form-field">
+            <label>Room:</label>
+            <input
+              name="room"
+              placeholder="Enter a room name..."
+              style="text-transform: uppercase"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Supervisor Name:</label>
+            <input
+              name="name"
+              placeholder="Enter your name..."
+              style="text-transform: uppercase"
+            />
+          </div>
+
+          <div class="form-field">
+            <input type="submit" value="Join Stream" />
+          </div>
+        </div>
+      </form>
+    </section>
+  </body>
+  <script>
+    let form = document.getElementById("form");
+
+    let handleSubmit = async (e) => {
+      e.preventDefault();
+      let room = e.target.room.value.toUpperCase();
+      let name = e.target.name.value;
+
+      let response = await fetch(`/meeting/get_token/?channel=${room}`);
+      let data = await response.json();
+
+      let UID = data.uid;
+      let token = data.token;
+
+      sessionStorage.setItem("UID", UID);
+      sessionStorage.setItem("token", token);
+      sessionStorage.setItem("room", room);
+      sessionStorage.setItem("name", name);
+
+      window.open("/meeting/room/", "_self");
+    };
+
+    form.addEventListener("submit", handleSubmit);
+
+    let supervisorForm = document.getElementById("supervisorForm");
+
+    let supervisorHandleSubmit = async (e) => {
+      e.preventDefault();
+      let room = e.target.room.value.toUpperCase();
+      let name = e.target.name.value;
+
+      let response = await fetch(`/meeting/get_token/?channel=${room}`);
+      let data = await response.json();
+
+      let UID = data.uid;
+      let token = data.token;
+
+      sessionStorage.setItem("UID", UID);
+      sessionStorage.setItem("token", token);
+      sessionStorage.setItem("room", room);
+      sessionStorage.setItem("name", name);
+
+      window.open("/meeting/supervisor_room/", "_self");
+    };
+
+    supervisorForm.addEventListener("submit", supervisorHandleSubmit);
+  </script>
+  {% endblock content %}
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %} {% block content %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supervisor Room</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{% static 'styles/main.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{% static 'styles/exam.css' %}"
+    />
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  </head>
+  <body>
+    <h2 id="clock"></h2>
+    <section id="room-name-wrapper">
+      <p>Supervisor Room</p>
+      <p>Room Name: <span id="room-name"></span></p>
+    </section>
+
+    <section id="video-streams"></section>
+
+    <section id="controls-wrapper">
+      <div class="icon-wrapper">
+        <img
+          class="control-icon"
+          id="mic-btn"
+          src="{% static 'images/microphone.svg' %}"
+        />
+      </div>
+
+      <div class="icon-wrapper">
+        <img
+          class="control-icon"
+          id="camera-btn"
+          src="{% static 'images/video.svg' %}"
+        />
+      </div>
+
+      <div class="icon-wrapper">
+        <img
+          class="control-icon"
+          id="leave-btn"
+          src="{% static 'images/leave.svg' %}"
+        />
+      </div>
+
+      <div class="icon-wrapper">
+        <img
+          class="control-icon"
+          id="detecting"
+          src="{% static 'images/detect.svg' %}"
+        />
+      </div>
+    </section>
+
+    <div
+      id="log"
+      style="
+        text-align: center;
+        margin: auto;
+        width: 1280px;
+        height: 360px;
+        background-color: white;
+      "
+    >
+      로그창
+    </div>
+
+    <!-- <canvas
+      id="canvas"
+      style="position: relative; text-align: center; left: 300px"
+    ></canvas> -->
+  </body>
+  <script
+    type="text/javascript"
+    src="{% static 'assets/AgoraRTC_N-4.8.0.js' %}"
+  ></script>
+  <script type="text/javascript" src="{% static 'js/streams.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/clock.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/poseNet.js' %}"></script>
+  {% endblock content %}
+</html>

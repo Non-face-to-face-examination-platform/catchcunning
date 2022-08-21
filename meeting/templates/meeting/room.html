@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %} {% block content %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{% static 'styles/main.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{% static 'styles/exam.css' %}"
+    />
+  </head>
+  <body>
+    <h2 id="clock"></h2>
+    <button id="fullscreenOff">시험 종료</button>
+    <button id="fullscreenOn">시험 시작</button>
+
+    <section id="room-name-wrapper">
+      <p>Room Name: <span id="room-name"></span></p>
+    </section>
+
+    <section id="video-streams"></section>
+
+    <section id="controls-wrapper">
+      <div class="icon-wrapper">
+        <img
+          class="control-icon"
+          id="mic-btn"
+          src="{% static 'images/microphone.svg' %}"
+        />
+      </div>
+
+      <div class="icon-wrapper">
+        <img
+          class="control-icon"
+          id="camera-btn"
+          src="{% static 'images/video.svg' %}"
+        />
+      </div>
+
+      <div class="icon-wrapper">
+        <img
+          class="control-icon"
+          id="leave-btn"
+          src="{% static 'images/leave.svg' %}"
+        />
+      </div>
+    </section>
+
+    <div id="exampage" style="text-align: center; display: none">
+      <img src="{% static 'images/testpage.jpg' %}" alt="" align="middle" />
+    </div>
+
+    <div id="fullscreen-off-warning" class="hidden modal">
+      <div class="modal_body">
+        <p>
+          시험 모드(전체화면 모드)가 중단되었습니다. 시험모드가 중단되면
+          부정행위 방지로 인해 잠시 뒤 시험이 자동으로 종료됩니다.
+          <br />정말 시험을 끝내시겠습니까? <br />* 작성하신 답안지는 자동으로
+          제출됩니다.
+        </p>
+        <p id="countdown"></p>
+        <button type="button" id="test-cont">시험 재개</button>
+        <button type="button" id="test-end">시험 종료</button>
+      </div>
+    </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="{% static 'assets/AgoraRTC_N-4.8.0.js' %}"
+  ></script>
+  <script type="text/javascript" src="{% static 'js/streams.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/clock.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/fullScreen.js' %}"></script>
+  {% endblock content %}
+</html>
