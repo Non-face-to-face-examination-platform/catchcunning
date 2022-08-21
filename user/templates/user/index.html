@@ -1,0 +1,35 @@
+<navbar>
+    {% if user.is_authenticated %}
+        <a href="{% url 'account_logout' %}">로그아웃</a> 
+    {% else %}
+        <a href="{% url 'account_login' %}">로그인</a>
+        <a href="{% url 'account_signup' %}">회원가입</a>
+    {% endif %}
+</navbar>
+
+<h1>홈페이지</h1>
+{% if user.is_authenticated %}
+       <p>안녕하세요!, {{user}}님!({{user.nickname}})</p>
+       {% if user.superintendent %} 
+            <input type="text" class="form-control" id="roomid" value="..." disabled>
+            <button class="cp-button" onclick="change()">방 코드 생성</button>
+            <script type="text/javascript">
+                function change(){
+                    document.getElementById('roomid').value="Close Curtain";
+                }
+            </script>
+       {% else %}
+       <form method="post">
+        {% csrf_token %}
+            <div>
+                room ID: <INPUT TYPE = "TEXT" NAME = "roomId" SIZE="20">
+                <button class="cp-button" type="submit" value="Join Stream">입장</button>
+            </div>
+        </form>
+
+       {% endif %}
+       <p><a href="{% url 'account_change_password' %}">비밀번호 변경</a></p>
+{% else %}
+       <p>로그아웃된 상태입니다.</p>
+{% endif %}
+
