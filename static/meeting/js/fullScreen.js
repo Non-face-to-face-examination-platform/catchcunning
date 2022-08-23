@@ -5,7 +5,7 @@ const test_end_btn = document.querySelector("#test-end");
 const test_cont_btn = document.querySelector("#test-cont");
 const countdown = document.querySelector("#countdown");
 
-const main_link = "https://54.180.101.186:8000";
+const main_link = "https://catchcunning.site";
 
 function startCountDown(timer) {
   let secondsRemaining = timer;
@@ -86,9 +86,9 @@ document.addEventListener("keydown", function (e) {
   console.log("keycode : " + keyCode);
 });
 
-// setInterval(function () {
-//   if (document.hasFocus() == false) {
-//     alert("탭 변경이 감지되었습니다. 시험이 종료되었습니다.");
-//     window.location.replace(main_link);
-//   }
-// });
+setInterval(function () {
+  if (document.hasFocus() == false) {
+    alert("탭 변경이 감지되었습니다. 시험이 종료되었습니다.");
+    window.location.replace(main_link);
+  }
+});
