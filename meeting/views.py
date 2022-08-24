@@ -8,8 +8,6 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 
 
-# Create your views here.
-
 def lobby(request):
     return render(request, 'meeting/lobby.html')
 
@@ -38,6 +36,7 @@ def getToken(request):
     return JsonResponse({'token': token, 'uid': uid}, safe=False)
 
 
+@csrf_exempt
 def createMember(request):
     data = json.loads(request.body)
     member, created = RoomMember.objects.get_or_create(
@@ -61,6 +60,7 @@ def getMember(request):
     return JsonResponse({'name': member.name}, safe=False)
 
 
+@csrf_exempt
 def deleteMember(request):
     data = json.loads(request.body)
     member = RoomMember.objects.get(
