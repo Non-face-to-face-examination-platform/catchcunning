@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 from user.views import CustomPasswordChangeView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     # admin
@@ -21,4 +23,4 @@ urlpatterns = [
     path('', include('allauth.urls')),
 
     path('meeting/', include('meeting.urls'))
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

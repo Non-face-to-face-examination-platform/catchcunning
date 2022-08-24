@@ -89,7 +89,7 @@ footer {
     margin-bottom: 0px;
 }
 
-.title {
+.main-title {
     font-size: 72px;
 }
 
@@ -101,13 +101,12 @@ footer {
     justify-content: space-around;
 }
 
-
-#signup-title, #super-title, #applicant-title {
+.title{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 50px;
 }
 
-.login-forms, .signup-forms, .super-setting{
+.login-forms, .signup-forms, .pwchange-forms, .super-setting{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -122,6 +121,19 @@ footer {
 
 .signup-forms{
     height: 500px;
+}
+
+.pwchange-forms{
+    height: 400px;
+}
+
+.pwreset-forms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 650px;
 }
 
 .super-setting{

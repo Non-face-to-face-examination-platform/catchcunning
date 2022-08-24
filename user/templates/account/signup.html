@@ -1,55 +1,56 @@
-{% extends "user_base/base.html" %}
-
 {% load static %}
 {% load widget_tweaks %}
 
-{% block title %}회원가입 | Coplate{% endblock title %}
-
-{% block content %}
-<div class="account-background">
-  <main class="account">
-    <div class="title">
-      <a href="{% url 'index' %}">
-        <img class="logo" src="{% static 'user/assets/coplate-logo.svg' %}" alt="Coplate Logo">
-      </a>
-    </div>
-
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'user/styles/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/64760829c9.js" crossorigin="anonymous"></script>
+    <title>Sign Up | Catch Cunning</title>
+</head>
+<body>
+    <h2 class="title">계정을 생성합니다</h2>
     <form method="post">
       {% csrf_token %}
-      <div>
-        {{form.email|add_class:"cp-input"|attr:"placeholder:이메일"|add_error_class:"error" }}
-        {% for error in form.email.errors %}
-          <div class="error-message">{{ error }}</div>
-        {% endfor %}
-      </div>
-      <div>
-        {{form.nickname|add_class:"errot cp-input"|attr:"placeholder:닉네임 (Coplate에서 사용되는 이름입니다.)"|add_error_class:"error" }}
-        {% for error in form.nickname.errors %}
-          <div class="error-message">{{ error }}</div>
-        {% endfor %}
-      </div>
-      <div>
-        {{form.password1|add_class:"cp-input"|attr:"placeholder:비밀번호"|add_error_class:"error" }}
-        {% for error in form.password1.errors %}
-          <div class="error-message">{{ error }}</div>
-        {% endfor %}
-      </div>
-      <div>
-        {{form.password2|add_class:"cp-input"|attr:"placeholder:비밀번호 확인"|add_error_class:"error" }}
-        {% for error in form.password2.errors %}
-          <div class="error-message">{{ error }}</div>
-        {% endfor %}
-      </div>
-      <div>
-        {{form.superintendent|add_class:""|attr:"name:"}}감독관이세요?
-        
-      </div>
-      <button class="cp-button" type="submit">회원가입</button>
+        <div class="signup-forms">
+          {{form.email|add_class:"cp-input"|attr:"placeholder:이메일"|add_error_class:"error" }}
+          {% for error in form.email.errors %}
+            <div class="error-message">{{ error }}</div>
+          {% endfor %}
+          {{form.nickname|add_class:"errot cp-input"|attr:"placeholder:이름"|add_error_class:"error" }}
+          {% for error in form.nickname.errors %}
+            <div class="error-message">{{ error }}</div>
+          {% endfor %}
+          {{form.password1|add_class:"cp-input"|attr:"placeholder:비밀번호"|add_error_class:"error" }}
+          {% for error in form.password1.errors %}
+            <div class="error-message">{{ error }}</div>
+          {% endfor %}
+          {{form.password2|add_class:"cp-input"|attr:"placeholder:비밀번호 확인"|add_error_class:"error" }}
+          {% for error in form.password2.errors %}
+            <div class="error-message">{{ error }}</div>
+          {% endfor %}
+          {{form.superintendent|add_class:""|attr:"name:"}}감독관으로 회원가입
+          
+            <button type="submit">Sign Up</button>
+        </div>
     </form>
+    <footer>
+        <div class="page-footer">
+            <a href='https://github.com/Non-face-to-face-examination-platform' target='_blank'>
+                <i class="fa-brands fa-github fa-lg"></i>
+                 Github</a>
+            <span>팀명 : 소개팅 나갈 사람</span>
+            <span>만든사람 : 김두현, 원준영, 최재혁</span>
+            <span>Special Thanks to  김재현</span>
+        </div>
+    </footer>
+</body>
+</html>
 
-    <div class="info">
-      이미 회원이신가요?<a class="link" href="{% url 'account_login' %}">로그인</a>
-    </div>
-  </main>
-</div>
-{% endblock content %}
