@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %} {% block content %}
+{% load static %}
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -21,7 +21,7 @@
   </head>
   <body>
     <h2 id="clock"></h2>
-    <button id="fullscreenOff">시험 종료</button>
+    <button id="fullscreenOff" hidden>시험 종료</button>
     <button id="fullscreenOn">시험 시작</button>
 
     <section id="room-name-wrapper">
@@ -57,11 +57,7 @@
     </section>
 
     <div id="exampage" style="text-align: center; display: none">
-      <img
-        src="{% static 'meeting/images/testpage.jpg' %}"
-        alt=""
-        align="middle"
-      />
+      <img src="" alt="" align="middle" />
     </div>
 
     <div id="fullscreen-off-warning" class="hidden modal">
@@ -73,11 +69,27 @@
           제출됩니다.
         </p>
         <p id="countdown"></p>
-        <button type="button" id="test-cont">시험 재개</button>
-        <button type="button" id="test-end">시험 종료</button>
+        <button
+          type="button"
+          id="test-cont"
+          style="background-color: rgb(255, 174, 0)"
+        >
+          시험 재개
+        </button>
+        <button type="button" id="test-end" style="background-color: firebrick">
+          시험 종료
+        </button>
       </div>
     </div>
   </body>
+  <script>
+    const startBtn = document.getElementById("fullscreenOn");
+    const endBtn = document.getElementById("fullscreenOff");
+    startBtn.addEventListener("click", () => {
+      startBtn.setAttribute("hidden", "");
+      endBtn.removeAttribute("hidden");
+    });
+  </script>
   <script
     type="text/javascript"
     src="{% static 'meeting/assets/AgoraRTC_N-4.8.0.js' %}"
@@ -94,5 +106,4 @@
     type="text/javascript"
     src="{% static 'meeting/js/fullScreen.js' %}"
   ></script>
-  {% endblock content %}
 </html>

@@ -1,128 +1,150 @@
+{% load static %}
 <!DOCTYPE html>
-{% load static %} {% block content %}
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lobby</title>
+    <title>Lobby</title>
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
       href="{% static 'meeting/styles/main.css' %}"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   </head>
+  
   <body>
+    <video id="video" autoplay></video>
+
     <section id="form-container">
       <img id="logo" src="{% static 'meeting/images/chat-icon.svg' %}" />
-
       <div id="welcome-message">
-        <h1>Welcome to MyChat</h1>
-        <p>A group video calling platform made just for you!</p>
+        <h1>이곳은 로비입니다.</h1>
+        <p>
+          시작 전 시험에 응시할 준비를 해주시기 바랍니다.<br />
+          준비를 마쳤다면 아래 버튼을 눌러 시험장에 입장하세요.
+        </p>
       </div>
-
+      {% if user.superintendent == 0 %}
       <!-- 응시자 로그인 -->
       <form id="form">
         <div class="field-wrapper">
           <div class="form-field">
-            <label>Room:</label>
             <input
               name="room"
+              value="{{room_name}}"
               placeholder="Enter a room name..."
               style="text-transform: uppercase"
+              hidden
             />
           </div>
-
           <div class="form-field">
-            <label>Name:</label>
             <input
               name="name"
+              value="{{user.nickname}}"
               placeholder="Enter your name..."
               style="text-transform: uppercase"
+              hidden
             />
           </div>
 
           <div class="form-field">
-            <input type="submit" value="Join Stream" />
+            <input type="submit" value="Join Stream" class="submit-btn"/>
           </div>
         </div>
       </form>
+      <script>
+        const form = document.getElementById("form");
 
+        let handleSubmit = async (e) => {
+          e.preventDefault();
+          let room = e.target.room.value.toUpperCase();
+          let name = e.target.name.value;
+
+          let response = await fetch(`/meeting/get_token/?channel=${room}`);
+          let data = await response.json();
+
+          let UID = data.uid;
+          let token = data.token;
+
+          sessionStorage.setItem("UID", UID);
+          sessionStorage.setItem("token", token);
+          sessionStorage.setItem("room", room);
+          sessionStorage.setItem("name", name);
+
+          window.open("/meeting/room/", "_self");
+        };
+
+        form.addEventListener("submit", handleSubmit);
+      </script>
+      {% else %}
       <!-- 감독관 로그인 -->
       <form id="supervisorForm">
         <div class="field-wrapper">
           <div class="form-field">
-            <label>Room:</label>
             <input
               name="room"
+              value="{{room_name}}"
               placeholder="Enter a room name..."
               style="text-transform: uppercase"
             />
           </div>
-
           <div class="form-field">
-            <label>Supervisor Name:</label>
             <input
               name="name"
+              value="{{user.nickname}}"
               placeholder="Enter your name..."
               style="text-transform: uppercase"
             />
           </div>
-
           <div class="form-field">
-            <input type="submit" value="Join Stream" />
+            <input type="submit" value="Join Stream"  class="submit-btn"/>
           </div>
         </div>
       </form>
+      <script>
+        const supervisorForm = document.getElementById("supervisorForm");
+
+        let supervisorHandleSubmit = async (e) => {
+          e.preventDefault();
+          let room = e.target.room.value.toUpperCase();
+          let name = e.target.name.value;
+
+          let response = await fetch(`/meeting/get_token/?channel=${room}`);
+          let data = await response.json();
+
+          let UID = data.uid;
+          let token = data.token;
+
+          sessionStorage.setItem("UID", UID);
+          sessionStorage.setItem("token", token);
+          sessionStorage.setItem("room", room);
+          sessionStorage.setItem("name", name);
+
+          window.open("/meeting/supervisor_room/", "_self");
+        };
+
+        supervisorForm.addEventListener("submit", supervisorHandleSubmit);
+      </script>
+      {% endif %}
     </section>
   </body>
+
   <script>
-    let form = document.getElementById("form");
+    const video = document.getElementById("video");
 
-    let handleSubmit = async (e) => {
-      e.preventDefault();
-      let room = e.target.room.value.toUpperCase();
-      let name = e.target.name.value;
-
-      let response = await fetch(`/meeting/get_token/?channel=${room}`);
-      let data = await response.json();
-
-      let UID = data.uid;
-      let token = data.token;
-
-      sessionStorage.setItem("UID", UID);
-      sessionStorage.setItem("token", token);
-      sessionStorage.setItem("room", room);
-      sessionStorage.setItem("name", name);
-
-      window.open("/meeting/room/", "_self");
-    };
-
-    form.addEventListener("submit", handleSubmit);
-
-    let supervisorForm = document.getElementById("supervisorForm");
-
-    let supervisorHandleSubmit = async (e) => {
-      e.preventDefault();
-      let room = e.target.room.value.toUpperCase();
-      let name = e.target.name.value;
-
-      let response = await fetch(`/meeting/get_token/?channel=${room}`);
-      let data = await response.json();
-
-      let UID = data.uid;
-      let token = data.token;
-
-      sessionStorage.setItem("UID", UID);
-      sessionStorage.setItem("token", token);
-      sessionStorage.setItem("room", room);
-      sessionStorage.setItem("name", name);
-
-      window.open("/meeting/supervisor_room/", "_self");
-    };
-
-    supervisorForm.addEventListener("submit", supervisorHandleSubmit);
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+          video.srcObject = stream;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   </script>
-  {% endblock content %}
 </html>

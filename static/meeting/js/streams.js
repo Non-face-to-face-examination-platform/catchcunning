@@ -19,8 +19,9 @@ let joinAndDisplayLocalStream = async () => {
   try {
     UID = await client.join(APP_ID, CHANNEL, TOKEN, UID);
   } catch (error) {
+    // console.log(UID.length);
     console.error(error);
-    window.open("/", "_self");
+    // window.open("/", "_self");
   }
 
   localTracks = await AgoraRTC.createMicrophoneAndCameraTracks();
@@ -107,7 +108,7 @@ let toggleMic = async (e) => {
 };
 
 let createMember = async () => {
-  let response = await fetch("/meeting/create_member/", { 
+  let response = await fetch("/meeting/create_member/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -1,0 +1,12 @@
+<div class="nav-bar">
+    <div class="nav-bar-text">
+        <a class="nav-items" href="{% url 'account_logout' %}">로그아웃</a>
+        <span> | </span>
+        <a class="nav-items" href="{% url 'account_change_password' %}">비밀번호 변경</a>
+    </div>
+    <div><a class="nav-items" id="title-logo">Catch Cunning</a></div>
+    <div class="nav-bar-text">
+        <span style="font-size: 24px;">{{user.nickname}}</span>
+        <span>님 반갑습니다.</span>
+    </div>
+</div>

@@ -5,5 +5,5 @@ from .models import Post
 class FileUploadForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ["filePath", "image"]
+        fields = ["fileName", "image"]
     

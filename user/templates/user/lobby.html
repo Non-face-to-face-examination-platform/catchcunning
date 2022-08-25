@@ -1,12 +1,11 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'user/styles/style.css' %}"
+    <link rel="stylesheet" type="text/css" href="{% static 'user/styles/style.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
@@ -15,8 +14,21 @@
     <title>Applicant Page | Catch Cunning</title>
 </head>
  
-{% if user.superintendent == false %}   
+{% if user.superintendent == 0 %}   
 <body>
+    <div class="nav-bar">
+        <div class="nav-bar-text">
+            <a class="nav-items" href="{% url 'account_logout' %}">로그아웃</a>
+            <span> | </span>
+            <a class="nav-items" href="{% url 'account_change_password' %}">비밀번호 변경</a>
+        </div>
+        <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
+        <div class="nav-bar-text">
+            <span style="font-size: 24px;">{{user.nickname}}</span>
+            <span>님 반갑습니다.</span>
+        </div>
+    </div>
+
     <h1 class="title">시험장에 입장하기 전에...</h1>
     <div class="prescript">
         <div id="caution">
@@ -30,13 +42,15 @@
             부정행위 감지되면 시험 종료됨!
         </p>
     </div>
-    <form>
+    <form id="user_form" method="POST" action="{% url 'meeting:' %}">
+        {% csrf_token %}
         <div class="assent">
             <input type="checkbox" id="agree_to_prescript">
             <label for="agree_to_prescript">위 주의사항을 숙지하였습니다.</label>
         </div>
-        <input type="text" id="enter_room" placeholder="방 입장 코드를 입력하세요.">
-        <button disabled id="join" class="hidden" >시험장 입장</button>
+        <input disabled type="text" id="enter_room" name="enter_room" placeholder="방 입장 코드를 입력하세요.">
+        <input type="text" name="{{user.nickname}}" hidden>
+        <button disabled type="submit" id="join" class="hidden" >시험장 입장</button>
     </form>
     <footer>
         <div class="page-footer">
@@ -52,21 +66,36 @@
 <script>
     const isAssented = document.getElementById("agree_to_prescript");
     const joinBtn = document.getElementById("join");
+    const inputCode = document.getElementById("enter_room");
+    const user_form = document.getElementById("user_form");
 
     isAssented.addEventListener('change', () =>{
         if(isAssented.checked){
             joinBtn.removeAttribute('disabled');
+            inputCode.removeAttribute('disabled');
             joinBtn.classList.remove("hidden");
         }
         else{
             joinBtn.setAttribute('disabled', "");
+            inputCode.setAttribute('disabled', "");
             joinBtn.classList.add("hidden");
-        }});
-
+    }});
 </script>
 </html>
 {% else %}
 <body>
+    <div class="nav-bar">
+        <div class="nav-bar-text">
+            <a class="nav-items" href="{% url 'account_logout' %}">로그아웃</a>
+            <span> | </span>
+            <a class="nav-items" href="{% url 'account_change_password' %}">비밀번호 변경</a>
+        </div>
+        <div><a class="nav-items" id="title-logo">Catch Cunning</a></div>
+        <div class="nav-bar-text">
+            <span style="font-size: 24px;">{{user.nickname}}</span>
+            <span>님 반갑습니다.</span>
+        </div>
+    </div>
     <h2 class="title">환영합니다, 감독관님!</h2>
     <div class="super-setting">
         <div style="position: relative;">
@@ -85,12 +114,16 @@
         
             <div class="preview">업로드할 문제 파일을 선택하세요.</div>
             <label for="question_uploads" id="file-search-btn"><i class="fa-regular fa-image fa-2xl"></i></label>
+            <input type="text" id="room_id" name="room_id" value="{{roomId}}" hidden> 
             <input type="file" id="question_uploads" name="question_uploads" accept=".jpg, .jpeg, .png" multiple hidden>
             <button type="submit" style="margin-left: 5px;">파일 업로드</button>
         </form>
         <div>
-            <input type="text" if="create_room" placeholder="방 입장 코드를 입력하세요.">
-            <button>방 생성하기</button>
+        <form id="supervisor_form" method="POST" action="{% url 'meeting:' %}">    
+            {% csrf_token %}
+            <input type="text" id="create_room" name="create_room"  placeholder="방 입장 코드를 입력하세요.">
+            <button type="submit">방 생성하기</button>
+        </form>
         </div>
 
     </div>

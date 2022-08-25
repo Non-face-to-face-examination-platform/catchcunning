@@ -3,20 +3,42 @@ from django.http import JsonResponse
 import random
 import time
 from agora_token_builder import RtcTokenBuilder
-from .models import RoomMember
+from .models import RoomMember, Post
 import json
 from django.views.decorators.csrf import csrf_exempt
 
 
 def lobby(request):
-    return render(request, 'meeting/lobby.html')
+    if request.user.is_authenticated != True:
+        return render(request, 'user/invalid.html')
+
+    context = dict()
+    if request.user.superintendent:
+        context['room_name'] = request.POST.get('create_room', '')
+    else:
+        context['room_name'] = request.POST.get('enter_room', '')
+    return render(request, 'meeting/lobby.html', context)
 
 
 def room(request):
+    if request.user.is_authenticated != True or request.user.superintendent == True:
+        return render(request, 'user/invalid.html')
+
+    print("room: " + str(request.POST.get('room', '')))
+
+    # roomName = RoomMember.objects.get()
+
+    # print(request)
+    # image = Post.objects.get(fileName=)
+    #context['image'] = image
+
     return render(request, 'meeting/room.html')
 
 
 def supervisorRoom(request):
+    if request.user.is_authenticated != True or request.user.superintendent != True:
+        return render(request, 'user/invalid.html')
+
     return render(request, 'meeting/supervisor_room.html')
 
 
@@ -51,7 +73,7 @@ def createMember(request):
 def getMember(request):
     uid = request.GET.get('UID')
     room_name = request.GET.get('room_name')
-
+    print(": " + str(room_name))
     member = RoomMember.objects.get(
         uid=uid,
         room_name=room_name,
@@ -63,10 +85,13 @@ def getMember(request):
 @csrf_exempt
 def deleteMember(request):
     data = json.loads(request.body)
-    member = RoomMember.objects.get(
-        name=data['name'],
-        uid=data['UID'],
-        room_name=data['room_name']
-    )
-    member.delete()
+    try:
+        member = RoomMember.objects.get(
+            name=data['name'],
+            uid=data['UID'],
+            room_name=data['room_name']
+        )
+        member.delete()
+    except RoomMember.DoesNotExist:
+        member = None
     return JsonResponse('Member deleted', safe=False)

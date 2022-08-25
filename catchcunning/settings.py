@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    # 'sslserver', nginx에서 letsencrypt로 인증서 자동 발급해서 사용 x
+    'sslserver',  # nginx에서 letsencrypt로 인증서 자동 발급해서 사용 x
 ]
 
 MIDDLEWARE = [
@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'catchcunning.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Ncheat',
+        'NAME': 'catchcunning',
         'Host': 'localhost',
         'PORT': '3306',
         'USER': 'du',
@@ -156,7 +156,7 @@ ACCOUNT_AUTHENTICATION_METHOD = "email"  # username_email
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False  # 유저네임 필드 삭제
 ACCOUNT_SIGNUP_FORM_CLASS = "user.forms.SignupForm"
-ACCOUNT_SESSION_REMEMBER = True  # 항상 기억할지(브라우저 종료해도)
+ACCOUNT_SESSION_REMEMBER = False  # 항상 기억할지(브라우저 종료해도)
 # SEESION_COOKIE_AGE = 3600           #쿠기 유지 시간(초단위, 기본시간 2주?)
 # 만료된 세션 아이디는 자동으로 삭제 안 됨 -> python manage.py clearsessions
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True  # 비번은 유지
@@ -181,7 +181,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 # EAMIL_HOST_USER = "tgu06167@yu.ac.kr"
-# EAMIL_HOST_PASSWORD = "456852ab789!!"
+# EAMIL_HOST_PASSWORD = "rmijzecloiljrxpx"
 # DEFAULT_FROM_EMAIL = EAMIL_HOST_USER
 
 # 미디어

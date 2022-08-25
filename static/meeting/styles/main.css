@@ -8,7 +8,7 @@
 
 body{
     background-color: rgba(232,233,239,1);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 
@@ -59,15 +59,15 @@ body{
 
 .form-field input{
     width: 100%;
-    border:2px solid rgba(198,202,219,1);
+    border:2px solid #f9f9f9;
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
-.form-field input[type='submit']{
-    background-color: rgb(75, 93, 172);
+.submit-btn{
+    background-color: rgb(26, 188, 156);
     border:none;
     color: #fff;
 }

@@ -16,7 +16,10 @@
     <title>Login | Catch Cunning</title>
 </head>
 <body>
-    <h1 class="title">Catch Cunning</h1>
+    <div class="nav-bar" style="justify-content: center;">
+      <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
+    </div>
+    <h1 class="main-title">Catch Cunning</h1>
     <form method="post">
       {% csrf_token %}
 
