@@ -19,15 +19,29 @@
       href="{% static 'meeting/styles/exam.css' %}"
     />
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/64760829c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </head>
   <body>
-    <h2 id="clock"></h2>
-    <section id="room-name-wrapper">
-      <p>Supervisor Room</p>
-      <p>Room Name: <span id="room-name"></span></p>
-    </section>
-
     <section id="video-streams"></section>
+
+    <div class="nav-bar">
+      <div class="nav-bar-text">
+        <section id="room-name-wrapper">
+          <p>Supervisor Room</p>
+          <p>Room Name: <span id="room-name"></span></p>
+        </section>
+      </div>
+      <div><h2 id="clock"></h2></div>
+      <div class="nav-bar-text">
+        <button class="inside-nav" id="capture-btn" type="button">
+          <i class="fa-solid fa-camera"></i> 화면캡처
+        </button>
+      </div>
+    </div>
 
     <section id="controls-wrapper">
       <div class="icon-wrapper">
@@ -81,6 +95,10 @@
       style="position: relative; text-align: center; left: 300px"
     ></canvas> -->
   </body>
+  <script
+    type="text/javascript"
+    src="{% static 'user/js/screenCapture.js' %}"
+  ></script>
   <script
     type="text/javascript"
     src="{% static 'meeting/assets/AgoraRTC_N-4.8.0.js' %}"

@@ -7,43 +7,75 @@
   }
 
 body{
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 750px;
+    min-width: 1000px;
     background-color: rgba(232,233,239,1);
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-
 /* ------------------  Register Page ------------------ */
 
+.lby-btn{
+    height: 50px;
+    width: 350px;
+    background-color: rgb(26, 188, 156);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 24px;
+}
+.lby-btn:hover{
+    background-color: rgb(24, 132, 110);
+    cursor: pointer;
+}
+
+.disabled{
+    opacity: 50%;
+}
+.disabled:hover{
+    cursor: not-allowed;
+}
+
+
 #form-container{
-    width: 400px;
+    width: 450px;
     box-shadow:var(--shaddow);
-    background-color: #fff;
+    background-color: #f4f4f4;
     padding: 30px;
-    border-radius: 5px;
-    position: fixed;
+    border-radius: 10px;
+    /* position: fixed;
     top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
+    left:50%; */
+    /* transform: translate(-50%, -50%); */
+}
+#form-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #logo{
     display: block;
     width: 100px;
     margin: 0 auto;
+    font-size: 80px;
+    text-align: center;
 }
 
 #welcome-message{
     text-align: center;
     margin-bottom: 20px;
 }
-
 #welcome-message h1{
     font-size: 36px;
 }
-
-
 #welcome-message p{
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(97, 98, 105);
     font-weight: 300;
 }
@@ -51,29 +83,45 @@ body{
 .form-field{
     margin-bottom: 20px;
 }
-
 .form-field label{
     font-size: 16px;
     line-height: 1.7em;
 }
-
 .form-field input{
     width: 100%;
-    border:2px solid #f4f4f4;
+    border:2px solid #fff;
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
-.submit-btn{
-    background-color: rgb(26, 188, 156);
-    border: none;
-    border-radius: 15px;
-    color: white;
 
+#capture-btn{
+    border: 1px solid #909090;
+    border-radius: 20px;
+    height: 40px;
+    width: 120px;
+    background-color: #f4f4f4;
+    color: #909090;
+    font-size: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#capture-btn:hover{
+    background-color: #d5d5d5;
+    cursor: pointer;
 }
 
+.inside-nav{
+    position: absolute;
+    top: 15px;
+    right: 200px;
+}
+.outside-nav{
+    position: fixed;
+    top: 20px;
+    right: 35px;
+}
 
 @media screen and (max-width:450px) {
     #form-container{
@@ -89,6 +137,7 @@ body{
 
 
 /* ----------------- Room Styling ------------------*/
+
 #room-name-wrapper{
     text-align: center;
     font-size: 18px;
@@ -99,7 +148,7 @@ body{
     flex-wrap: wrap;
     height: 85vh;
     width: 95%;
-    margin:0 auto;
+    margin: 80px auto;
 }
 
 .video-container{

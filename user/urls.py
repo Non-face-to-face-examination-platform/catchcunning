@@ -6,4 +6,5 @@ urlpatterns = [
     path('lobby/', views.lobby, name='lobby'),
     path('upLoad/', views.upLoad, name='upLoad'),
     path('changePassword', views.changePassword, name='changePassword'),
+    path('sendmail', views.sendmail, name='sendmail'),
 ]

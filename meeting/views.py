@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 import random
 import time
@@ -6,11 +6,16 @@ from agora_token_builder import RtcTokenBuilder
 from .models import RoomMember, Post
 import json
 from django.views.decorators.csrf import csrf_exempt
+import os
 
 
 def lobby(request):
     if request.user.is_authenticated != True:
         return render(request, 'user/invalid.html')
+    
+    roomMove = str(request.user.nickname) + "님이 meeting:lobby로 입장했습니다."
+    kakaoMessage = "python3 meeting/kakaoAlarm.py " + str(roomMove)
+    os.system(kakaoMessage)
 
     context = dict()
     if request.user.superintendent:
@@ -23,24 +28,39 @@ def lobby(request):
 def room(request):
     if request.user.is_authenticated != True or request.user.superintendent == True:
         return render(request, 'user/invalid.html')
-
-    print("room: " + str(request.POST.get('room', '')))
-
-    # roomName = RoomMember.objects.get()
+    else:
+        roomMove = str(request.user.nickname) + "님이 room으로 입장했습니다."
+        kakaoMessage = "python3 meeting/kakaoAlarm.py " + str(roomMove)
+        os.system(kakaoMessage)
+        return render(request, 'meeting/room.html')
+    
+    #context['image'] = Post.objects.get(fileName=fileName)
 
     # print(request)
     # image = Post.objects.get(fileName=)
     #context['image'] = image
-
-    return render(request, 'meeting/room.html')
 
 
 def supervisorRoom(request):
     if request.user.is_authenticated != True or request.user.superintendent != True:
         return render(request, 'user/invalid.html')
 
+    roomMove = str(request.user.nickname) + "님이 supervisorRoom으로 입장했습니다."
+    kakaoMessage = "python3 meeting/kakaoAlarm.py " + str(roomMove)
+    os.system(kakaoMessage)
     return render(request, 'meeting/supervisor_room.html')
 
+def getImageName(request):
+    context = dict()
+    if request.method == 'POST':
+        fileName = request.POST.get('room_name', '')
+        context['image'] = Post.objects.get(fileName=fileName)
+        print("room: " + str(request.POST.get('room_name', '')))
+        print(context['image'].image)
+        request.user.testPath = context['image'].image
+        request.user.save()
+        return redirect("meeting:")
+  
 
 def getToken(request):
     appId = "9316dc098a9b4edaa2d4ec0e7794c9a7"

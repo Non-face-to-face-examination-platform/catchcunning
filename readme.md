@@ -49,5 +49,5 @@ const APP_ID = 'YOUR APP ID'
 ```
 python3 manage.py runserver
 # or ssl
-python3 manage.py runsslserver 0:8000 --certificate django.crt --key django.key
+python3 manage.py runsslserver 0:3000 --certificate django.crt --key django.key
 ```

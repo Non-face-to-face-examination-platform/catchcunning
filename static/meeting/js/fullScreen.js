@@ -60,10 +60,10 @@ testModOnBtn.addEventListener("click", () => {
   document.addEventListener("fullscreenchange", testModOff);
   document.addEventListener("visibilitychange", testModOff);
   setInterval(function () {
-    if (document.hasFocus() == false) {
-      alert("탭 변경이 감지되었습니다. 시험이 종료되었습니다.");
-      window.location.replace(main_link);
-    }
+    //if (document.hasFocus() == false) {
+    //  alert("탭 변경이 감지되었습니다. 시험이 종료되었습니다.");
+    //  window.location.replace(main_link);
+    //}
   });
   document.getElementById("exampage").style.display = "";
 });

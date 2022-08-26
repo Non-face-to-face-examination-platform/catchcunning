@@ -73,6 +73,7 @@ button:hover {
 }
 
 .nav-bar-text{
+    position: relative;
     padding: 0px 30px;
     height: 66px;
     font-family: 'Noto Sans KR', sans-serif;
@@ -80,7 +81,6 @@ button:hover {
     font-size: 18px;
     border-bottom: 4px solid white;
     line-height: 66px;
-
 }
 
 .nav-items{
@@ -95,6 +95,28 @@ button:hover {
 #title-logo{    
     font-family: 'Rubik', sans-serif;
     font-size: 30px;
+}
+
+#capture-btn{
+    height: 40px;
+    width: 120px;
+    background-color: #f4f4f4;
+    color: #909090;
+    font-size: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#capture-btn:hover{
+    background-color: #d5d5d5;
+}
+.inside-nav{
+    position: absolute;
+    top: 15px;
+    right: 275px;
+}
+.outside-nav{
+    position: fixed;
+    top:15px;
+    right: 30px;
 }
 
 footer {

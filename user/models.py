@@ -17,18 +17,7 @@ class User(AbstractUser):
     )
 
     superintendent = models.BooleanField(default=False)
-
-    passwordQuestion = models.CharField(
-        max_length=50,
-        error_messages={'max_length': '질문의 길이가 너무 깁니다.'},
-        null=True,
-        )
-    passwordAnswer = models.CharField(
-        max_length=50,
-        error_messages={'max_length': '답변의 길이가 너무 깁니다.'},
-        null=True,
-    )
-
+    testPath = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.email

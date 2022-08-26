@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 {% load static %}
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -18,17 +19,31 @@
       media="screen"
       href="{% static 'meeting/styles/exam.css' %}"
     />
+    <script
+      src="https://kit.fontawesome.com/64760829c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </head>
+
   <body>
-    <h2 id="clock"></h2>
-    <button id="fullscreenOff" hidden>시험 종료</button>
-    <button id="fullscreenOn">시험 시작</button>
-
-    <section id="room-name-wrapper">
-      <p>Room Name: <span id="room-name"></span></p>
-    </section>
-
     <section id="video-streams"></section>
+
+    <div class="nav-bar">
+      <div class="nav-bar-text">
+        <section id="room-name-wrapper">
+          <p>Room Name: <span id="room-name"></span></p>
+        </section>
+      </div>
+      <div><h2 id="clock"></h2></div>
+      <div class="nav-bar-text">
+        <button class="inside-nav" id="capture-btn" type="button">
+          <i class="fa-solid fa-camera"></i> 화면캡처
+        </button>
+        <button id="fullscreenOff" hidden>시험 종료</button>
+        <button id="fullscreenOn">시험 시작</button>
+      </div>
+    </div>
 
     <section id="controls-wrapper">
       <div class="icon-wrapper">
@@ -57,7 +72,7 @@
     </section>
 
     <div id="exampage" style="text-align: center; display: none">
-      <img src="" alt="" align="middle" />
+      <img src="/media/{{user.testPath}}" alt="" align="middle" />
     </div>
 
     <div id="fullscreen-off-warning" class="hidden modal">
@@ -85,11 +100,16 @@
   <script>
     const startBtn = document.getElementById("fullscreenOn");
     const endBtn = document.getElementById("fullscreenOff");
+
     startBtn.addEventListener("click", () => {
       startBtn.setAttribute("hidden", "");
       endBtn.removeAttribute("hidden");
     });
   </script>
+  <script
+    type="text/javascript"
+    src="{% static 'user/js/screenCapture.js' %}"
+  ></script>
   <script
     type="text/javascript"
     src="{% static 'meeting/assets/AgoraRTC_N-4.8.0.js' %}"

@@ -12,24 +12,47 @@
       media="screen"
       href="{% static 'meeting/styles/main.css' %}"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/64760829c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </head>
-  
+
   <body>
-    <video id="video" autoplay></video>
+    <button class="outside-nav" id="capture-btn" type="button">
+      <i class="fa-solid fa-camera"></i> 화면캡처
+    </button>
 
     <section id="form-container">
-      <img id="logo" src="{% static 'meeting/images/chat-icon.svg' %}" />
+      <i class="fa-solid fa-video" id="logo"></i>
       <div id="welcome-message">
         <h1>이곳은 로비입니다.</h1>
         <p>
           시작 전 시험에 응시할 준비를 해주시기 바랍니다.<br />
-          준비를 마쳤다면 아래 버튼을 눌러 시험장에 입장하세요.
+          문제 불러오기 버튼을 눌러서 문제를 업로드합니다.<br />
+          준비가 끝났다면 Join Stream을 눌러 시험장에 입장하세요.
         </p>
       </div>
       {% if user.superintendent == 0 %}
       <!-- 응시자 로그인 -->
+
+      <form method="post" action="{% url 'meeting:getImageName' %}">
+        {% csrf_token %}
+        <input name="room_name" value="{{room_name}}" hidden />
+        <button type="submit" class="lby-btn" id="pull-questions">
+          문제 불러오기
+        </button>
+      </form>
+
       <form id="form">
         <div class="field-wrapper">
           <div class="form-field">
@@ -52,7 +75,14 @@
           </div>
 
           <div class="form-field">
-            <input type="submit" value="Join Stream" class="submit-btn"/>
+            <button
+              type="submit"
+              class="lby-btn disabled"
+              id="join-btn"
+              disabled
+            >
+              Join Stream
+            </button>
           </div>
         </div>
       </form>
@@ -80,6 +110,14 @@
 
         form.addEventListener("submit", handleSubmit);
       </script>
+      <script>
+        const pullQuestionsBtn = document.getElementById("pull-questions");
+        const joinBtn = document.getElementById("join-btn");
+        pullQuestionsBtn.addEventListener("click", () => {
+          joinBtn.removeAttribute("disabled");
+          joinBtn.classList.remove("disabled");
+        });
+      </script>
       {% else %}
       <!-- 감독관 로그인 -->
       <form id="supervisorForm">
@@ -101,7 +139,9 @@
             />
           </div>
           <div class="form-field">
-            <input type="submit" value="Join Stream"  class="submit-btn"/>
+            <button type="submit" class="lby-btn" id="join-btn">
+              Join Stream
+            </button>
           </div>
         </div>
       </form>
@@ -131,6 +171,8 @@
       </script>
       {% endif %}
     </section>
+
+    <video id="video" autoplay></video>
   </body>
 
   <script>
@@ -147,4 +189,8 @@
         });
     }
   </script>
+  <script
+    type="text/javascript"
+    src="{% static 'user/js/screenCapture.js' %}"
+  ></script>
 </html>

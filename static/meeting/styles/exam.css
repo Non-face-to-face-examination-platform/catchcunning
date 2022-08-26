@@ -2,6 +2,27 @@
   display: none;
 }
 
+.nav-bar{
+  position: fixed;
+  top: 0px;
+  height: 70px;
+  width: 100%;
+  min-width: 1000px;
+  background-color: rgb(224, 224, 224);
+  border-bottom: 1px solid rgb(115, 115, 115);
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar-text{
+  padding: 0px 30px;
+  color: black;
+  font-size: 20px;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -25,8 +46,8 @@
 
   text-align: center;
 
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
+  background-color: #fff;
+  border-radius: 15px;
   box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
 
   transform: translateX(-50%) translateY(-50%);

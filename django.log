@@ -3422,3 +3422,693 @@ Traceback (most recent call last):
 meeting.models.RoomMember.MultipleObjectsReturned: get() returned more than one RoomMember -- it returned 2!
 [pid: 1433|app: 0|req: 8/8] 58.141.228.147 () {64 vars in 1316 bytes} [Thu Aug 25 15:52:38 2022] GET /meeting/room/ => generated 66635 bytes in 47 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
 [pid: 1433|app: 0|req: 9/9] 58.141.228.147 () {62 vars in 1239 bytes} [Thu Aug 25 15:53:04 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+Not Found: /api/v1/notices
+[pid: 1433|app: 0|req: 10/10] 45.32.17.205 () {38 vars in 657 bytes} [Thu Aug 25 16:01:31 2022] GET /api/v1/notices?page=1&per_page=1&thread_name=general => generated 6726 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 11/11] 20.229.51.198 () {34 vars in 398 bytes} [Thu Aug 25 16:08:22 2022] HEAD / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 12/12] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 16:12:15 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 13/13] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 16:13:06 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 14/14] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 16:13:06 2022] GET /lobby/ => generated 3603 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 15/15] 58.141.228.147 () {56 vars in 1161 bytes} [Thu Aug 25 16:15:39 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 16/16] 58.141.228.147 () {60 vars in 1241 bytes} [Thu Aug 25 16:16:20 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 17/17] 58.141.228.147 () {60 vars in 1241 bytes} [Thu Aug 25 16:16:21 2022] GET /lobby/ => generated 3603 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 18/18] 58.141.228.147 () {68 vars in 1439 bytes} [Thu Aug 25 16:16:26 2022] POST /meeting/ => generated 2906 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 19/19] 58.141.228.147 () {56 vars in 1099 bytes} [Thu Aug 25 16:16:27 2022] GET /meeting/get_token/?channel=AASD => generated 162 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 199 bytes (1 switches on core 0)
+room: 
+Internal Server Error: /meeting/room/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/./meeting/views.py", line 29, in room
+    #roomName = RoomMember.objects.get()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 443, in get
+    raise self.model.MultipleObjectsReturned(
+meeting.models.RoomMember.MultipleObjectsReturned: get() returned more than one RoomMember -- it returned 2!
+[pid: 1433|app: 0|req: 20/20] 58.141.228.147 () {60 vars in 1263 bytes} [Thu Aug 25 16:16:27 2022] GET /meeting/room/ => generated 66368 bytes in 37 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 21/21] 58.141.228.147 () {56 vars in 1099 bytes} [Thu Aug 25 16:16:34 2022] GET /meeting/get_token/?channel=AASD => generated 164 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 199 bytes (1 switches on core 0)
+room: 
+Internal Server Error: /meeting/room/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/./meeting/views.py", line 29, in room
+    #roomName = RoomMember.objects.get()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 443, in get
+    raise self.model.MultipleObjectsReturned(
+meeting.models.RoomMember.MultipleObjectsReturned: get() returned more than one RoomMember -- it returned 2!
+[pid: 1433|app: 0|req: 22/22] 58.141.228.147 () {60 vars in 1263 bytes} [Thu Aug 25 16:16:34 2022] GET /meeting/room/ => generated 66368 bytes in 35 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
+Not Found: /.env
+[pid: 1433|app: 0|req: 23/23] 95.214.235.205 () {36 vars in 505 bytes} [Thu Aug 25 16:16:39 2022] GET /.env => generated 6642 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1433|app: 0|req: 24/24] 95.214.235.205 () {40 vars in 612 bytes} [Thu Aug 25 16:16:39 2022] POST / => generated 3000 bytes in 2 msecs (HTTP/1.1 403) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 25/25] 58.141.228.147 () {56 vars in 1161 bytes} [Thu Aug 25 16:17:19 2022] GET / => generated 4935 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 26/26] 58.141.228.147 () {60 vars in 1241 bytes} [Thu Aug 25 16:18:30 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 27/27] 58.141.228.147 () {60 vars in 1241 bytes} [Thu Aug 25 16:18:30 2022] GET /lobby/ => generated 3603 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 28/28] 58.141.228.147 () {56 vars in 1161 bytes} [Thu Aug 25 16:18:56 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 29/29] 106.75.49.60 () {30 vars in 308 bytes} [Thu Aug 25 16:22:17 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.0 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 30/30] 206.189.231.200 () {36 vars in 411 bytes} [Thu Aug 25 16:29:29 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 31/31] 20.168.65.180 () {40 vars in 621 bytes} [Thu Aug 25 16:37:26 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 32/32] 20.168.65.180 () {40 vars in 676 bytes} [Thu Aug 25 16:37:27 2022] GET //wp-includes/wlwmanifest.xml => generated 6715 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /xmlrpc.php
+[pid: 1433|app: 0|req: 33/33] 20.168.65.180 () {40 vars in 649 bytes} [Thu Aug 25 16:37:27 2022] GET //xmlrpc.php?rsd => generated 6668 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 34/34] 20.168.65.180 () {40 vars in 621 bytes} [Thu Aug 25 16:37:27 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 35/35] 20.168.65.180 () {40 vars in 686 bytes} [Thu Aug 25 16:37:28 2022] GET //blog/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /web/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 36/36] 20.168.65.180 () {40 vars in 684 bytes} [Thu Aug 25 16:37:28 2022] GET //web/wp-includes/wlwmanifest.xml => generated 6727 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 37/37] 20.168.65.180 () {40 vars in 696 bytes} [Thu Aug 25 16:37:29 2022] GET //wordpress/wp-includes/wlwmanifest.xml => generated 6745 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /website/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 38/38] 20.168.65.180 () {40 vars in 692 bytes} [Thu Aug 25 16:37:29 2022] GET //website/wp-includes/wlwmanifest.xml => generated 6739 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 39/39] 20.168.65.180 () {40 vars in 682 bytes} [Thu Aug 25 16:37:29 2022] GET //wp/wp-includes/wlwmanifest.xml => generated 6724 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /news/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 40/40] 20.168.65.180 () {40 vars in 686 bytes} [Thu Aug 25 16:37:29 2022] GET //news/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 41/41] 20.168.65.180 () {40 vars in 686 bytes} [Thu Aug 25 16:37:30 2022] GET //2018/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 42/42] 20.168.65.180 () {40 vars in 686 bytes} [Thu Aug 25 16:37:30 2022] GET //2019/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 43/43] 20.168.65.180 () {40 vars in 686 bytes} [Thu Aug 25 16:37:30 2022] GET //shop/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 44/44] 20.168.65.180 () {40 vars in 684 bytes} [Thu Aug 25 16:37:30 2022] GET //wp1/wp-includes/wlwmanifest.xml => generated 6727 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /test/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 45/45] 20.168.65.180 () {40 vars in 686 bytes} [Thu Aug 25 16:37:30 2022] GET //test/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 46/46] 20.168.65.180 () {40 vars in 684 bytes} [Thu Aug 25 16:37:31 2022] GET //wp2/wp-includes/wlwmanifest.xml => generated 6727 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /site/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 47/47] 20.168.65.180 () {40 vars in 686 bytes} [Thu Aug 25 16:37:31 2022] GET //site/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 48/48] 20.168.65.180 () {40 vars in 684 bytes} [Thu Aug 25 16:37:31 2022] GET //cms/wp-includes/wlwmanifest.xml => generated 6727 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 49/49] 20.168.65.180 () {40 vars in 686 bytes} [Thu Aug 25 16:37:31 2022] GET //sito/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 50/50] 176.53.216.114 () {36 vars in 509 bytes} [Thu Aug 25 16:49:19 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 1433|app: 0|req: 51/51] 176.53.216.114 () {36 vars in 531 bytes} [Thu Aug 25 16:49:19 2022] GET /favicon.ico => generated 6667 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 52/52] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 16:54:55 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 53/53] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:08:58 2022] GET / => generated 4935 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 54/54] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:09:38 2022] GET / => generated 4935 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 55/55] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:09:41 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 56/56] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:09:41 2022] GET /lobby/ => generated 3603 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 57/57] 89.248.168.222 () {34 vars in 369 bytes} [Thu Aug 25 17:10:13 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 58/58] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:10:54 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 59/59] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:10:56 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 60/60] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:10:56 2022] GET /lobby/ => generated 3603 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 61/61] 58.141.228.147 () {70 vars in 1461 bytes} [Thu Aug 25 17:11:00 2022] POST /meeting/ => generated 2908 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 62/62] 58.141.228.147 () {60 vars in 1156 bytes} [Thu Aug 25 17:11:03 2022] GET /meeting/get_token/?channel=123123 => generated 163 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 199 bytes (1 switches on core 0)
+room: 
+Internal Server Error: /meeting/room/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/./meeting/views.py", line 29, in room
+    #roomName = RoomMember.objects.get()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 443, in get
+    raise self.model.MultipleObjectsReturned(
+meeting.models.RoomMember.MultipleObjectsReturned: get() returned more than one RoomMember -- it returned 2!
+[pid: 1433|app: 0|req: 63/63] 58.141.228.147 () {64 vars in 1316 bytes} [Thu Aug 25 17:11:03 2022] GET /meeting/room/ => generated 66623 bytes in 36 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 64/64] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:13:53 2022] GET / => generated 4935 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 65/65] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:15:19 2022] GET / => generated 4935 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 66/66] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:15:20 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 67/67] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:15:48 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 68/68] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:18:18 2022] GET / => generated 4935 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 69/69] 20.211.87.54 () {38 vars in 444 bytes} [Thu Aug 25 17:21:03 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 70/70] 20.168.3.154 () {40 vars in 620 bytes} [Thu Aug 25 17:22:46 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 71/71] 20.168.3.154 () {40 vars in 675 bytes} [Thu Aug 25 17:22:46 2022] GET //wp-includes/wlwmanifest.xml => generated 6715 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /xmlrpc.php
+[pid: 1433|app: 0|req: 72/72] 20.168.3.154 () {40 vars in 648 bytes} [Thu Aug 25 17:22:46 2022] GET //xmlrpc.php?rsd => generated 6668 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 73/73] 20.168.3.154 () {40 vars in 620 bytes} [Thu Aug 25 17:22:47 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 74/74] 20.168.3.154 () {40 vars in 685 bytes} [Thu Aug 25 17:22:47 2022] GET //blog/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /web/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 75/75] 20.168.3.154 () {40 vars in 683 bytes} [Thu Aug 25 17:22:47 2022] GET //web/wp-includes/wlwmanifest.xml => generated 6727 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 76/76] 20.168.3.154 () {40 vars in 695 bytes} [Thu Aug 25 17:22:47 2022] GET //wordpress/wp-includes/wlwmanifest.xml => generated 6745 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /website/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 77/77] 20.168.3.154 () {40 vars in 691 bytes} [Thu Aug 25 17:22:47 2022] GET //website/wp-includes/wlwmanifest.xml => generated 6739 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 78/78] 20.168.3.154 () {40 vars in 681 bytes} [Thu Aug 25 17:22:47 2022] GET //wp/wp-includes/wlwmanifest.xml => generated 6724 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /news/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 79/79] 20.168.3.154 () {40 vars in 685 bytes} [Thu Aug 25 17:22:47 2022] GET //news/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 80/80] 20.168.3.154 () {40 vars in 685 bytes} [Thu Aug 25 17:22:48 2022] GET //2018/wp-includes/wlwmanifest.xml => generated 6730 bytes in 7 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 81/81] 20.168.3.154 () {40 vars in 685 bytes} [Thu Aug 25 17:22:48 2022] GET //2019/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 82/82] 20.168.3.154 () {40 vars in 685 bytes} [Thu Aug 25 17:22:48 2022] GET //shop/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 83/83] 20.168.3.154 () {40 vars in 683 bytes} [Thu Aug 25 17:22:48 2022] GET //wp1/wp-includes/wlwmanifest.xml => generated 6727 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /test/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 84/84] 20.168.3.154 () {40 vars in 685 bytes} [Thu Aug 25 17:22:48 2022] GET //test/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 85/85] 20.168.3.154 () {40 vars in 683 bytes} [Thu Aug 25 17:22:48 2022] GET //wp2/wp-includes/wlwmanifest.xml => generated 6727 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /site/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 86/86] 20.168.3.154 () {40 vars in 685 bytes} [Thu Aug 25 17:22:49 2022] GET //site/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 87/87] 20.168.3.154 () {40 vars in 683 bytes} [Thu Aug 25 17:22:49 2022] GET //cms/wp-includes/wlwmanifest.xml => generated 6727 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[pid: 1433|app: 0|req: 88/88] 20.168.3.154 () {40 vars in 685 bytes} [Thu Aug 25 17:22:49 2022] GET //sito/wp-includes/wlwmanifest.xml => generated 6730 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 89/89] 113.31.102.176 () {38 vars in 596 bytes} [Thu Aug 25 17:24:33 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (2 switches on core 0)
+Not Found: /favicon.ico
+[pid: 1433|app: 0|req: 90/90] 113.31.102.176 () {38 vars in 618 bytes} [Thu Aug 25 17:24:33 2022] GET /favicon.ico => generated 6663 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 91/91] 169.48.124.163 () {40 vars in 569 bytes} [Thu Aug 25 17:36:09 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 92/92] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:39:35 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 93/93] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:39:37 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 94/94] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:39:37 2022] GET /lobby/ => generated 3603 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 95/95] 58.141.228.147 () {70 vars in 1461 bytes} [Thu Aug 25 17:39:44 2022] POST /meeting/ => generated 2914 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 96/96] 58.141.228.147 () {60 vars in 1216 bytes} [Thu Aug 25 17:39:46 2022] GET /meeting/get_token/?channel=%EC%9E%98%EC%A2%80%EB%B4%90%EB%9D%BC => generated 163 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 199 bytes (1 switches on core 0)
+room: 
+Internal Server Error: /meeting/room/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/./meeting/views.py", line 29, in room
+    #roomName = RoomMember.objects.get()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 443, in get
+    raise self.model.MultipleObjectsReturned(
+meeting.models.RoomMember.MultipleObjectsReturned: get() returned more than one RoomMember -- it returned 4!
+[pid: 1433|app: 0|req: 97/97] 58.141.228.147 () {64 vars in 1316 bytes} [Thu Aug 25 17:39:46 2022] GET /meeting/room/ => generated 66750 bytes in 35 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
+Not Found: /.env
+[pid: 1433|app: 0|req: 98/98] 95.214.235.205 () {36 vars in 505 bytes} [Thu Aug 25 17:46:02 2022] GET /.env => generated 6642 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1433|app: 0|req: 99/99] 95.214.235.205 () {40 vars in 612 bytes} [Thu Aug 25 17:46:03 2022] POST / => generated 3000 bytes in 2 msecs (HTTP/1.1 403) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 100/100] 118.235.6.137 () {56 vars in 1139 bytes} [Thu Aug 25 17:46:14 2022] GET / => generated 5021 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 101/101] 118.235.6.137 () {56 vars in 1139 bytes} [Thu Aug 25 17:46:15 2022] GET / => generated 5021 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 102/102] 118.235.6.137 () {60 vars in 1219 bytes} [Thu Aug 25 17:46:16 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 103/103] 118.235.6.137 () {60 vars in 1219 bytes} [Thu Aug 25 17:46:16 2022] GET /lobby/ => generated 4601 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 104/104] 118.235.6.137 () {60 vars in 1227 bytes} [Thu Aug 25 17:46:20 2022] GET /logout/ => generated 0 bytes in 13 msecs (HTTP/1.1 302) 9 headers in 334 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 105/105] 118.235.6.137 () {60 vars in 1169 bytes} [Thu Aug 25 17:46:20 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 106/106] 118.235.6.137 () {60 vars in 1175 bytes} [Thu Aug 25 17:46:22 2022] GET /login/ => generated 2219 bytes in 14 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 107/107] 118.235.6.137 () {68 vars in 1369 bytes} [Thu Aug 25 17:46:27 2022] POST /login/ => generated 0 bytes in 260 msecs (HTTP/1.1 302) 10 headers in 554 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 108/108] 118.235.6.137 () {62 vars in 1256 bytes} [Thu Aug 25 17:46:27 2022] GET /lobby/ => generated 3603 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 109/109] 118.235.6.137 () {68 vars in 1417 bytes} [Thu Aug 25 17:46:31 2022] POST /meeting/ => generated 2906 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 110/110] 118.235.6.137 () {56 vars in 1077 bytes} [Thu Aug 25 17:46:33 2022] GET /meeting/get_token/?channel=GNGN => generated 164 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 199 bytes (1 switches on core 0)
+room: 
+Internal Server Error: /meeting/room/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/./meeting/views.py", line 29, in room
+    print(fileName)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 443, in get
+    raise self.model.MultipleObjectsReturned(
+meeting.models.RoomMember.MultipleObjectsReturned: get() returned more than one RoomMember -- it returned 5!
+[pid: 1433|app: 0|req: 111/111] 118.235.6.137 () {60 vars in 1241 bytes} [Thu Aug 25 17:46:33 2022] GET /meeting/room/ => generated 66485 bytes in 35 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 112/112] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:47:06 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 113/113] 206.189.231.200 () {38 vars in 524 bytes} [Thu Aug 25 17:47:14 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 114/114] 206.189.231.200 () {38 vars in 524 bytes} [Thu Aug 25 17:47:18 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 115/115] 206.189.231.200 () {40 vars in 600 bytes} [Thu Aug 25 17:47:19 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 116/116] 206.189.231.200 () {38 vars in 545 bytes} [Thu Aug 25 17:47:22 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 117/117] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 17:49:15 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 118/118] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:49:17 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 119/119] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:49:17 2022] GET /lobby/ => generated 3603 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 120/120] 58.141.228.147 () {70 vars in 1461 bytes} [Thu Aug 25 17:49:20 2022] POST /meeting/ => generated 2912 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 121/121] 58.141.228.147 () {60 vars in 1164 bytes} [Thu Aug 25 17:49:22 2022] GET /meeting/get_token/?channel=SALKDJASKL => generated 163 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 199 bytes (1 switches on core 0)
+room: 
+Internal Server Error: /meeting/room/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/./meeting/views.py", line 29, in room
+    print("room: " + str(request.POST.get('room_name', '')))
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 443, in get
+    raise self.model.MultipleObjectsReturned(
+meeting.models.RoomMember.MultipleObjectsReturned: get() returned more than one RoomMember -- it returned 4!
+[pid: 1433|app: 0|req: 122/122] 58.141.228.147 () {64 vars in 1316 bytes} [Thu Aug 25 17:49:22 2022] GET /meeting/room/ => generated 66861 bytes in 35 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 123/123] 194.163.34.145 () {38 vars in 539 bytes} [Thu Aug 25 17:50:15 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 124/124] 58.141.228.147 () {62 vars in 1239 bytes} [Thu Aug 25 17:51:47 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 125/125] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:52:00 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 126/126] 58.141.228.147 () {64 vars in 1294 bytes} [Thu Aug 25 17:52:01 2022] GET /lobby/ => generated 3603 bytes in 7 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 127/127] 58.141.228.147 () {70 vars in 1461 bytes} [Thu Aug 25 17:52:07 2022] POST /meeting/ => generated 2914 bytes in 6 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 128/128] 58.141.228.147 () {60 vars in 1168 bytes} [Thu Aug 25 17:52:10 2022] GET /meeting/get_token/?channel=LKJAFADKLSJF => generated 164 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 199 bytes (1 switches on core 0)
+room: 
+Internal Server Error: /meeting/room/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/./meeting/views.py", line 29, in room
+    print("room: " + str(request.POST.get('room_name', '')))
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 443, in get
+    raise self.model.MultipleObjectsReturned(
+meeting.models.RoomMember.MultipleObjectsReturned: get() returned more than one RoomMember -- it returned 4!
+[pid: 1433|app: 0|req: 129/129] 58.141.228.147 () {64 vars in 1316 bytes} [Thu Aug 25 17:52:10 2022] GET /meeting/room/ => generated 66861 bytes in 36 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 130/130] 58.141.228.147 () {62 vars in 1239 bytes} [Thu Aug 25 17:52:39 2022] GET / => generated 4935 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 131/131] 143.92.32.161 () {32 vars in 351 bytes} [Thu Aug 25 17:59:27 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /api/v1/notices
+[pid: 1433|app: 0|req: 132/132] 45.32.17.205 () {38 vars in 657 bytes} [Thu Aug 25 18:00:53 2022] GET /api/v1/notices?page=1&per_page=1&thread_name=general => generated 6726 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 133/133] 35.86.99.55 () {38 vars in 535 bytes} [Thu Aug 25 18:02:08 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 134/134] 35.86.99.55 () {38 vars in 535 bytes} [Thu Aug 25 18:02:09 2022] GET / => generated 4500 bytes in 2 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 135/135] 58.141.228.147 () {62 vars in 1239 bytes} [Thu Aug 25 18:07:09 2022] GET / => generated 1653 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 136/136] 58.141.228.147 () {62 vars in 1239 bytes} [Thu Aug 25 18:17:48 2022] GET / => generated 1653 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 137/137] 118.235.6.137 () {58 vars in 1164 bytes} [Thu Aug 25 18:27:39 2022] GET / => generated 1653 bytes in 26 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'user_user.passwordQuestion' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 90, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/allauth/account/views.py", line 149, in dispatch
+    return super(LoginView, self).dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/allauth/account/views.py", line 72, in dispatch
+    if request.user.is_authenticated and app_settings.AUTHENTICATED_LOGIN_REDIRECTS:
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/utils/functional.py", line 248, in inner
+    self._setup()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/utils/functional.py", line 384, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 184, in get_user
+    user = backend.get_user(user_id)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/contrib/auth/backends.py", line 156, in get_user
+    user = UserModel._default_manager.get(pk=user_id)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 435, in get
+    num = len(clone)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 262, in __len__
+    self._fetch_all()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1354, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'user_user.passwordQuestion' in 'field list'")
+[pid: 1433|app: 0|req: 138/138] 118.235.6.137 () {60 vars in 1219 bytes} [Thu Aug 25 18:27:43 2022] GET /login/ => generated 199124 bytes in 102 msecs (HTTP/1.1 500) 7 headers in 228 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 139/139] 167.94.146.57 () {30 vars in 321 bytes} [Thu Aug 25 18:37:08 2022] GET / => generated 1653 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 140/140] 167.94.146.57 () {36 vars in 452 bytes} [Thu Aug 25 18:37:09 2022] GET / => generated 1653 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 141/141] 58.141.228.147 () {60 vars in 1214 bytes} [Thu Aug 25 18:41:26 2022] GET / => generated 1653 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+Not Found: /solr/
+[pid: 1433|app: 0|req: 142/142] 162.221.192.26 () {36 vars in 508 bytes} [Thu Aug 25 18:45:25 2022] GET /solr/ => generated 6646 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu/catchcunning
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (/home/ubuntu/catchcunning/uwsgi.sock)
+running /home/ubuntu/catchcunning/venv/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.20 (64bit) on [Thu Aug 25 18:46:55 2022] ***
+compiled with version: 9.4.0 on 25 August 2022 06:46:00
+os: Linux-5.13.0-1029-aws #32~20.04.1-Ubuntu SMP Thu Jun 9 13:03:13 UTC 2022
+nodename: ip-172-31-39-201
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/catchcunning
+detected binary path: /home/ubuntu/catchcunning/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ubuntu/catchcunning
+your processes number limit is 15637
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/ubuntu/catchcunning/uwsgi.sock fd 3
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+PEP 405 virtualenv detected: /home/ubuntu/catchcunning/venv
+Set PythonHome to /home/ubuntu/catchcunning/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x561eeac5f450
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x561eeac5f450 pid: 1424 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1424)
+spawned uWSGI worker 1 (pid: 15648, cores: 1)
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Aug 26 03:37:49 2022] ***
+compiled with version: 9.4.0 on 25 August 2022 06:46:00
+os: Linux-5.13.0-1029-aws #32~20.04.1-Ubuntu SMP Thu Jun 9 13:03:13 UTC 2022
+nodename: ip-172-31-39-201
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/catchcunning
+writing pidfile to /tmp/project-master.pid
+detected binary path: /home/ubuntu/.local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ubuntu/catchcunning
+your processes number limit is 15637
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ubuntu/catchcunning/uwsgi.sock fd 3
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+PEP 405 virtualenv detected: /home/ubuntu/catchcunning/venv
+Set PythonHome to /home/ubuntu/catchcunning/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x557da2bd53d0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x557da2bd53d0 pid: 12908 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 12908)
+spawned uWSGI worker 1 (pid: 12915, cores: 1)
+{"result_code":0}
+[pid: 12915|app: 0|req: 1/1] 110.8.254.3 () {58 vars in 1177 bytes} [Fri Aug 26 03:37:52 2022] GET / => generated 1937 bytes in 671 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 12915|app: 0|req: 2/2] 110.8.254.3 () {56 vars in 1113 bytes} [Fri Aug 26 03:37:53 2022] GET /favicon.ico => generated 6839 bytes in 19 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 12915|app: 0|req: 3/3] 157.245.154.115 () {40 vars in 623 bytes} [Fri Aug 26 03:37:55 2022] GET / => generated 1937 bytes in 223 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 4/4] 157.245.154.115 () {40 vars in 678 bytes} [Fri Aug 26 03:37:55 2022] GET //wp-includes/wlwmanifest.xml => generated 6887 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /xmlrpc.php
+[pid: 12915|app: 0|req: 5/5] 157.245.154.115 () {40 vars in 651 bytes} [Fri Aug 26 03:37:55 2022] GET //xmlrpc.php?rsd => generated 6840 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 12915|app: 0|req: 6/6] 110.8.254.3 () {60 vars in 1238 bytes} [Fri Aug 26 03:37:55 2022] GET /login/ => generated 0 bytes in 21 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 12915|app: 0|req: 7/7] 157.245.154.115 () {40 vars in 623 bytes} [Fri Aug 26 03:37:56 2022] GET / => generated 1937 bytes in 220 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 12915|app: 0|req: 8/8] 110.8.254.3 () {60 vars in 1238 bytes} [Fri Aug 26 03:37:56 2022] GET /lobby/ => generated 3894 bytes in 232 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 9/9] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 03:37:56 2022] GET //blog/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /web/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 10/10] 157.245.154.115 () {40 vars in 686 bytes} [Fri Aug 26 03:37:56 2022] GET //web/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 11/11] 157.245.154.115 () {40 vars in 698 bytes} [Fri Aug 26 03:37:56 2022] GET //wordpress/wp-includes/wlwmanifest.xml => generated 6917 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /website/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 12/12] 157.245.154.115 () {40 vars in 694 bytes} [Fri Aug 26 03:37:56 2022] GET //website/wp-includes/wlwmanifest.xml => generated 6911 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 13/13] 157.245.154.115 () {40 vars in 684 bytes} [Fri Aug 26 03:37:56 2022] GET //wp/wp-includes/wlwmanifest.xml => generated 6896 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /news/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 14/14] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 03:37:56 2022] GET //news/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 15/15] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 03:37:57 2022] GET //2018/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 16/16] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 03:37:57 2022] GET //2019/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 17/17] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 03:37:57 2022] GET //shop/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 18/18] 157.245.154.115 () {40 vars in 686 bytes} [Fri Aug 26 03:37:57 2022] GET //wp1/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /test/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 19/19] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 03:37:57 2022] GET //test/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 20/20] 157.245.154.115 () {40 vars in 686 bytes} [Fri Aug 26 03:37:57 2022] GET //wp2/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /site/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 21/21] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 03:37:57 2022] GET //site/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 22/22] 157.245.154.115 () {40 vars in 686 bytes} [Fri Aug 26 03:37:57 2022] GET //cms/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[pid: 12915|app: 0|req: 23/23] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 03:37:57 2022] GET //sito/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 12915|app: 0|req: 24/24] 110.8.254.3 () {60 vars in 1201 bytes} [Fri Aug 26 03:38:39 2022] GET / => generated 1937 bytes in 222 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 12915|app: 0|req: 25/25] 110.8.254.3 () {60 vars in 1238 bytes} [Fri Aug 26 03:38:42 2022] GET /login/ => generated 0 bytes in 5 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 12915|app: 0|req: 26/26] 110.8.254.3 () {60 vars in 1238 bytes} [Fri Aug 26 03:38:42 2022] GET /lobby/ => generated 3894 bytes in 232 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+Internal Server Error: /sendmail
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/catchcunning/./user/views.py", line 77, in sendmail
+    email.send()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/mail/message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/mail/backends/smtp.py", line 109, in send_messages
+    sent = self._send(message)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/mail/backends/smtp.py", line 125, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "/usr/lib/python3.8/smtplib.py", line 880, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+smtplib.SMTPSenderRefused: (530, b'5.7.0 Authentication Required. Learn more at\n5.7.0  https://support.google.com/mail/?p=WantAuthError x15-20020a62860f000000b0053640880313sm434932pfd.46 - gsmtp', 'hn06038@gmail.com')
+[pid: 12915|app: 0|req: 27/27] 110.8.254.3 () {58 vars in 1193 bytes} [Fri Aug 26 03:38:51 2022] GET /sendmail => generated 76205 bytes in 1896 msecs (HTTP/1.1 500) 7 headers in 227 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 12915|app: 0|req: 28/28] 192.241.213.41 () {36 vars in 404 bytes} [Fri Aug 26 03:39:43 2022] GET / => generated 1937 bytes in 223 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /api/v1/notices
+[pid: 12915|app: 0|req: 29/29] 45.32.17.205 () {38 vars in 657 bytes} [Fri Aug 26 04:00:58 2022] GET /api/v1/notices?page=1&per_page=1&thread_name=general => generated 6898 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 12915|app: 0|req: 30/30] 23.22.19.168 () {36 vars in 522 bytes} [Fri Aug 26 04:07:33 2022] GET / => generated 1937 bytes in 232 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 12915|app: 0|req: 31/31] 23.22.19.168 () {36 vars in 544 bytes} [Fri Aug 26 04:07:48 2022] GET /favicon.ico => generated 6839 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 12915|app: 0|req: 32/32] 34.207.194.89 () {36 vars in 545 bytes} [Fri Aug 26 04:07:49 2022] GET /favicon.ico => generated 6839 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /favicon.png
+[pid: 12915|app: 0|req: 33/33] 23.22.19.168 () {36 vars in 544 bytes} [Fri Aug 26 04:07:55 2022] GET /favicon.png => generated 6839 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /favicon.png
+[pid: 12915|app: 0|req: 34/34] 34.207.194.89 () {36 vars in 545 bytes} [Fri Aug 26 04:07:56 2022] GET /favicon.png => generated 6839 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /.env
+[pid: 12915|app: 0|req: 35/35] 95.214.235.205 () {36 vars in 505 bytes} [Fri Aug 26 04:16:11 2022] GET /.env => generated 6814 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 12915|app: 0|req: 36/36] 95.214.235.205 () {40 vars in 612 bytes} [Fri Aug 26 04:16:12 2022] POST / => generated 3000 bytes in 3 msecs (HTTP/1.1 403) 6 headers in 200 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.20 (64bit) on [Fri Aug 26 04:27:08 2022] ***
+compiled with version: 9.4.0 on 25 August 2022 06:46:00
+os: Linux-5.13.0-1029-aws #32~20.04.1-Ubuntu SMP Thu Jun 9 13:03:13 UTC 2022
+nodename: ip-172-31-39-201
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/catchcunning
+writing pidfile to /tmp/project-master.pid
+detected binary path: /home/ubuntu/.local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ubuntu/catchcunning
+your processes number limit is 15637
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ubuntu/catchcunning/uwsgi.sock fd 3
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+PEP 405 virtualenv detected: /home/ubuntu/catchcunning/venv
+Set PythonHome to /home/ubuntu/catchcunning/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55ad4a1af3d0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55ad4a1af3d0 pid: 15171 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 15171)
+spawned uWSGI worker 1 (pid: 15173, cores: 1)
+{"result_code":0}
+[pid: 15173|app: 0|req: 1/1] 110.8.254.3 () {60 vars in 1201 bytes} [Fri Aug 26 04:27:14 2022] GET / => generated 1937 bytes in 308 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+[pid: 15173|app: 0|req: 2/2] 110.8.254.3 () {60 vars in 1238 bytes} [Fri Aug 26 04:27:20 2022] GET /login/ => generated 0 bytes in 22 msecs (HTTP/1.1 302) 8 headers in 241 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 3/3] 110.8.254.3 () {60 vars in 1238 bytes} [Fri Aug 26 04:27:20 2022] GET /lobby/ => generated 3894 bytes in 260 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+[pid: 15173|app: 0|req: 4/4] 110.8.254.3 () {58 vars in 1193 bytes} [Fri Aug 26 04:27:58 2022] GET /sendmail => generated 0 bytes in 324 msecs (HTTP/1.1 302) 7 headers in 221 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 5/5] 110.8.254.3 () {58 vars in 1177 bytes} [Fri Aug 26 04:27:59 2022] GET / => generated 1937 bytes in 224 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /robots.txt
+[pid: 15173|app: 0|req: 6/6] 66.249.79.249 () {38 vars in 540 bytes} [Fri Aug 26 04:32:31 2022] GET /robots.txt => generated 6836 bytes in 8 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 7/7] 66.249.79.249 () {40 vars in 631 bytes} [Fri Aug 26 04:32:32 2022] GET / => generated 1937 bytes in 265 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /api/v1
+[pid: 15173|app: 0|req: 8/8] 164.92.218.104 () {38 vars in 455 bytes} [Fri Aug 26 04:36:21 2022] GET /api/v1 => generated 6821 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 9/9] 157.245.154.115 () {40 vars in 623 bytes} [Fri Aug 26 04:43:19 2022] GET / => generated 1937 bytes in 230 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 10/10] 157.245.154.115 () {40 vars in 678 bytes} [Fri Aug 26 04:43:20 2022] GET //wp-includes/wlwmanifest.xml => generated 6887 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /xmlrpc.php
+[pid: 15173|app: 0|req: 11/11] 157.245.154.115 () {40 vars in 651 bytes} [Fri Aug 26 04:43:20 2022] GET //xmlrpc.php?rsd => generated 6840 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 12/12] 157.245.154.115 () {40 vars in 623 bytes} [Fri Aug 26 04:43:20 2022] GET / => generated 1937 bytes in 229 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 13/13] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 04:43:20 2022] GET //blog/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /web/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 14/14] 157.245.154.115 () {40 vars in 686 bytes} [Fri Aug 26 04:43:20 2022] GET //web/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 15/15] 157.245.154.115 () {40 vars in 698 bytes} [Fri Aug 26 04:43:20 2022] GET //wordpress/wp-includes/wlwmanifest.xml => generated 6917 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /website/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 16/16] 157.245.154.115 () {40 vars in 694 bytes} [Fri Aug 26 04:43:21 2022] GET //website/wp-includes/wlwmanifest.xml => generated 6911 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 17/17] 157.245.154.115 () {40 vars in 684 bytes} [Fri Aug 26 04:43:21 2022] GET //wp/wp-includes/wlwmanifest.xml => generated 6896 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /news/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 18/18] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 04:43:21 2022] GET //news/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 19/19] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 04:43:21 2022] GET //2018/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 20/20] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 04:43:21 2022] GET //2019/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 21/21] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 04:43:21 2022] GET //shop/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 22/22] 157.245.154.115 () {40 vars in 686 bytes} [Fri Aug 26 04:43:21 2022] GET //wp1/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /test/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 23/23] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 04:43:21 2022] GET //test/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 24/24] 157.245.154.115 () {40 vars in 686 bytes} [Fri Aug 26 04:43:21 2022] GET //wp2/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /site/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 25/25] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 04:43:21 2022] GET //site/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 26/26] 157.245.154.115 () {40 vars in 686 bytes} [Fri Aug 26 04:43:22 2022] GET //cms/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 27/27] 157.245.154.115 () {40 vars in 688 bytes} [Fri Aug 26 04:43:22 2022] GET //sito/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 28/28] 184.105.139.69 () {28 vars in 289 bytes} [Fri Aug 26 04:56:50 2022] GET / => generated 1937 bytes in 223 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 29/29] 2.57.122.98 () {44 vars in 759 bytes} [Fri Aug 26 05:00:20 2022] GET / => generated 1937 bytes in 220 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 15173|app: 0|req: 30/30] 184.105.139.73 () {34 vars in 487 bytes} [Fri Aug 26 05:01:36 2022] GET /favicon.ico => generated 6835 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 31/31] 54.163.136.148 () {36 vars in 545 bytes} [Fri Aug 26 05:10:36 2022] GET / => generated 2006 bytes in 271 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 32/32] 66.249.79.251 () {44 vars in 856 bytes} [Fri Aug 26 05:46:20 2022] GET / => generated 2071 bytes in 226 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /.env
+[pid: 15173|app: 0|req: 33/33] 95.214.235.205 () {36 vars in 505 bytes} [Fri Aug 26 05:47:13 2022] GET /.env => generated 6814 bytes in 7 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 15173|app: 0|req: 34/34] 95.214.235.205 () {40 vars in 612 bytes} [Fri Aug 26 05:47:14 2022] POST / => generated 3000 bytes in 4 msecs (HTTP/1.1 403) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 35/35] 128.14.134.170 () {36 vars in 498 bytes} [Fri Aug 26 05:52:05 2022] GET / => generated 2071 bytes in 244 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 36/36] 128.14.133.58 () {34 vars in 468 bytes} [Fri Aug 26 05:58:36 2022] GET / => generated 2071 bytes in 252 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /api/v1/notices
+[pid: 15173|app: 0|req: 37/37] 45.32.17.205 () {38 vars in 657 bytes} [Fri Aug 26 06:02:34 2022] GET /api/v1/notices?page=1&per_page=1&thread_name=general => generated 6898 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 38/38] 202.95.12.32 () {30 vars in 314 bytes} [Fri Aug 26 06:10:43 2022] GET / => generated 2071 bytes in 230 msecs (HTTP/1.1 200) 7 headers in 222 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 15173|app: 0|req: 39/39] 202.95.12.32 () {32 vars in 374 bytes} [Fri Aug 26 06:11:07 2022] GET /favicon.ico => generated 6835 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /robots.txt
+[pid: 15173|app: 0|req: 40/40] 202.95.12.32 () {32 vars in 372 bytes} [Fri Aug 26 06:11:08 2022] GET /robots.txt => generated 6832 bytes in 12 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /sitemap.xml
+[pid: 15173|app: 0|req: 41/41] 202.95.12.32 () {32 vars in 374 bytes} [Fri Aug 26 06:11:12 2022] GET /sitemap.xml => generated 6835 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp-includes/ID3/license.txt
+[pid: 15173|app: 0|req: 42/42] 34.71.211.217 () {40 vars in 675 bytes} [Fri Aug 26 06:26:31 2022] GET //wp-includes/ID3/license.txt => generated 6887 bytes in 36 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /feed/
+[pid: 15173|app: 0|req: 43/43] 34.71.211.217 () {40 vars in 631 bytes} [Fri Aug 26 06:26:31 2022] GET //feed/ => generated 6821 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /xmlrpc.php
+[pid: 15173|app: 0|req: 44/44] 34.71.211.217 () {40 vars in 648 bytes} [Fri Aug 26 06:26:32 2022] GET //xmlrpc.php?rsd => generated 6840 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 45/45] 34.71.211.217 () {40 vars in 685 bytes} [Fri Aug 26 06:26:32 2022] GET //blog/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /web/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 46/46] 34.71.211.217 () {40 vars in 683 bytes} [Fri Aug 26 06:26:32 2022] GET //web/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 47/47] 34.71.211.217 () {40 vars in 695 bytes} [Fri Aug 26 06:26:32 2022] GET //wordpress/wp-includes/wlwmanifest.xml => generated 6917 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 48/48] 34.71.211.217 () {40 vars in 681 bytes} [Fri Aug 26 06:26:32 2022] GET //wp/wp-includes/wlwmanifest.xml => generated 6896 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2020/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 49/49] 34.71.211.217 () {40 vars in 685 bytes} [Fri Aug 26 06:26:32 2022] GET //2020/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 50/50] 34.71.211.217 () {40 vars in 685 bytes} [Fri Aug 26 06:26:33 2022] GET //2019/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /2021/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 51/51] 34.71.211.217 () {40 vars in 685 bytes} [Fri Aug 26 06:26:33 2022] GET //2021/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 52/52] 34.71.211.217 () {40 vars in 685 bytes} [Fri Aug 26 06:26:33 2022] GET //shop/wp-includes/wlwmanifest.xml => generated 6902 bytes in 11 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 53/53] 34.71.211.217 () {40 vars in 683 bytes} [Fri Aug 26 06:26:33 2022] GET //wp1/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /test/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 54/54] 34.71.211.217 () {40 vars in 685 bytes} [Fri Aug 26 06:26:33 2022] GET //test/wp-includes/wlwmanifest.xml => generated 6902 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /site/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 55/55] 34.71.211.217 () {40 vars in 685 bytes} [Fri Aug 26 06:26:34 2022] GET //site/wp-includes/wlwmanifest.xml => generated 6902 bytes in 7 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[pid: 15173|app: 0|req: 56/56] 34.71.211.217 () {40 vars in 683 bytes} [Fri Aug 26 06:26:34 2022] GET //cms/wp-includes/wlwmanifest.xml => generated 6899 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+{"result_code":0}
+[pid: 15173|app: 0|req: 57/57] 110.8.254.3 () {58 vars in 1156 bytes} [Fri Aug 26 06:34:00 2022] GET / => generated 2071 bytes in 784 msecs (HTTP/1.1 200) 8 headers in 321 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 15173|app: 0|req: 58/58] 110.8.254.3 () {56 vars in 1048 bytes} [Fri Aug 26 06:34:02 2022] GET /favicon.ico => generated 6839 bytes in 12 msecs (HTTP/1.1 404) 6 headers in 200 bytes (1 switches on core 0)
+[pid: 15173|app: 0|req: 59/59] 110.8.254.3 () {60 vars in 1173 bytes} [Fri Aug 26 06:34:03 2022] GET /login/ => generated 2565 bytes in 166 msecs (HTTP/1.1 200) 8 headers in 390 bytes (1 switches on core 0)
+Internal Server Error: /signup/
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/base.py", line 500, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/engine.py", line 163, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/engine.py", line 145, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/base.py", line 199, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/base.py", line 502, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ubuntu/catchcunning/venv/lib/python3.8/site-packages/django/template/base.py", line 561, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 50: 'endfor'. Did you forget to register or load this tag?
+[pid: 15173|app: 0|req: 60/60] 110.8.254.3 () {60 vars in 1175 bytes} [Fri Aug 26 06:34:06 2022] GET /signup/ => generated 140276 bytes in 244 msecs (HTTP/1.1 500) 7 headers in 228 bytes (1 switches on core 0)

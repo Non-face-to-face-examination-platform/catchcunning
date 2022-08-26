@@ -10,8 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/64760829c9.js" crossorigin="anonymous"></script>
     <title>Applicant Page | Catch Cunning</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://kit.fontawesome.com/64760829c9.js" crossorigin="anonymous"></script>
 </head>
  
 {% if user.superintendent == 0 %}   
@@ -24,6 +25,7 @@
         </div>
         <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
         <div class="nav-bar-text">
+            <button class="inside-nav" id="capture-btn" type="button"><i class="fa-solid fa-camera"></i> 화면캡처</button>
             <span style="font-size: 24px;">{{user.nickname}}</span>
             <span>님 반갑습니다.</span>
         </div>
@@ -63,6 +65,7 @@
         </div>
     </footer>
 </body>
+<script type="text/javascript" src="{% static 'user/js/screenCapture.js' %}"></script>
 <script>
     const isAssented = document.getElementById("agree_to_prescript");
     const joinBtn = document.getElementById("join");
@@ -92,6 +95,7 @@
         </div>
         <div><a class="nav-items" id="title-logo">Catch Cunning</a></div>
         <div class="nav-bar-text">
+            <button class="inside-nav" id="capture-btn" type="button"><i class="fa-solid fa-camera"></i> 화면캡처</button>
             <span style="font-size: 24px;">{{user.nickname}}</span>
             <span>님 반갑습니다.</span>
         </div>
@@ -138,6 +142,7 @@
         </div>
     </footer>
 </body>
+<script type="text/javascript" src="{% static 'user/js/screenCapture.js' %}"></script>
 <script>
     function copy_to_clipboard() {
         const copyText = document.getElementById('random_code');
