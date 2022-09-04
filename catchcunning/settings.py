@@ -147,13 +147,13 @@ ACCOUNT_SESSION_REMEMBER = False  # 항상 기억할지(브라우저 종료해�
 # SEESION_COOKIE_AGE = 3600           #쿠기 유지 시간(초단위, 기본시간 2주?)
 # 만료된 세션 아이디는 자동으로 삭제 안 됨 -> python manage.py clearsessions
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = False  # 비번은 유지
-ACCOUNT_EMAIL_VARIFICATION = "none"
+ACCOUNT_EMAIL_VERIFICATION = "none"
 # mandatory 무조건 인증, optional 인증 안해도 디폴트 값, none 아예 인증 필요x
-ACCOUNT_CONFIEM_EMAIL_ON_GET = False
-ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = {
-    "account_email_confirmation_done"
-}  # 로그인 됐을 때
-ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "account_email_cofirmation_done"  # 로그인 안 됐을 때
+ACCOUNT_CONFIEM_EMAIL_ON_GET = True
+# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = {
+#     "account_email_confirmation_done"
+# }  # 로그인 됐을 때
+# ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "account_email_cofirmation_done"  # 로그인 안 됐을 때
 PASSWORD_RESET_TIMEOUT_DAYS = 3600
 # 장고 3.0 버전 이전은 TIMEOUT_DAYS = 단위 일, 3.1 이후는 TIMOUT = 단위 초
 ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
