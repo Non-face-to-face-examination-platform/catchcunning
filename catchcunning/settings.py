@@ -147,7 +147,7 @@ ACCOUNT_SESSION_REMEMBER = False  # 항상 기억할지(브라우저 종료해�
 # SEESION_COOKIE_AGE = 3600           #쿠기 유지 시간(초단위, 기본시간 2주?)
 # 만료된 세션 아이디는 자동으로 삭제 안 됨 -> python manage.py clearsessions
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = False  # 비번은 유지
-ACCOUNT_EMAIL_VARIFICATION = "optional"
+ACCOUNT_EMAIL_VARIFICATION = "none"
 # mandatory 무조건 인증, optional 인증 안해도 디폴트 값, none 아예 인증 필요x
 ACCOUNT_CONFIEM_EMAIL_ON_GET = False
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = {

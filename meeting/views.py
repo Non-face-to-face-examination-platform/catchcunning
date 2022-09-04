@@ -12,7 +12,7 @@ import os
 def lobby(request):
     if request.user.is_authenticated != True:
         return render(request, 'user/invalid.html')
-    
+
     roomMove = str(request.user.nickname) + "님이 meeting:lobby로 입장했습니다."
     kakaoMessage = "python3 meeting/kakaoAlarm.py " + str(roomMove)
     os.system(kakaoMessage)
@@ -33,7 +33,7 @@ def room(request):
         kakaoMessage = "python3 meeting/kakaoAlarm.py " + str(roomMove)
         os.system(kakaoMessage)
         return render(request, 'meeting/room.html')
-    
+
     #context['image'] = Post.objects.get(fileName=fileName)
 
     # print(request)
@@ -50,17 +50,25 @@ def supervisorRoom(request):
     os.system(kakaoMessage)
     return render(request, 'meeting/supervisor_room.html')
 
+
 def getImageName(request):
+    print("이미지")
     context = dict()
+    context['presence'] = 0
     if request.method == 'POST':
         fileName = request.POST.get('room_name', '')
-        context['image'] = Post.objects.get(fileName=fileName)
-        print("room: " + str(request.POST.get('room_name', '')))
-        print(context['image'].image)
-        request.user.testPath = context['image'].image
-        request.user.save()
-        return redirect("meeting:")
-  
+        try:
+            print("성공")
+            context['image'] = Post.objects.get(fileName=fileName)
+            request.user.testPath = context['image'].image
+            request.user.save()
+            context['presence'] = 1
+            return render(request, 'meeting/lobby.html', context=context)
+        except Post.DoesNotExist:
+            context['presence'] = 0
+            print("실패")
+            return render(request, 'meeting/lobby.html', context=context)
+
 
 def getToken(request):
     appId = "9316dc098a9b4edaa2d4ec0e7794c9a7"

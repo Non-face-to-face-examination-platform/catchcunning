@@ -7,4 +7,5 @@ from .models import User
 admin.site.register(User, UserAdmin)
 UserAdmin.fieldsets += (("Custom fields", {"fields": ("nickname",)}),)
 UserAdmin.fieldsets += (("Custom fields", {"fields": ("superintendent",)}),)
+UserAdmin.fieldsets += (("Custom fields", {"fields": ("testPath",)}),)
 #기본적으로 어드민 페이지에 나타나지 않으므로 추가?

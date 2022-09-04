@@ -34,7 +34,8 @@ def lobby(request):
         kakaoMessage = "python3 meeting/kakaoAlarm.py " + str(roomMove)
         os.system(kakaoMessage)
 
-        context["roomId"] = hash(request.user.nickname)
+        context["roomId"] = hash(
+            request.user.nickname + str(datetime.now().time()))
         return render(request, 'user/lobby.html', context=context)
     else:
         return render(request, 'user/invalid.html')
@@ -74,7 +75,7 @@ class CustomPasswordChangeView(PasswordChangeView):
 def sendmail(request):
     data = request.POST.__getitem__('imgSrc')
     data = data[22:]        # 앞의 'data:image/png;base64'부분을 제거
-    print("data: " + data)
+    # print("data: " + data)
     number = random.randrange(1, 10000)    # 동시에 다른 사용자가 접근시 최대한 중복을 막기위함.
 
     # 저장할 경로 및 파일명을 지정
@@ -88,7 +89,7 @@ def sendmail(request):
     image.write(base64.b64decode(data))
     image.close()
 
-  # filename을 json형식에 맞추어 response를 보내준다.
+    # filename을 json형식에 맞추어 response를 보내준다.
 
     email = EmailMessage(
         'title',
@@ -98,12 +99,4 @@ def sendmail(request):
 
     email.attach_file(path+filename)
     email.send()
-
-    # send_mail(
-    #     'Hello',
-    #     'Body goes here',
-    #     'noreply@catchcunning.site',
-    #     ['hn06038@gmail.com'],
-    # )
-
     return redirect("/")

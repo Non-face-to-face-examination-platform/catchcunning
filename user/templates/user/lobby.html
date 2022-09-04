@@ -1,148 +1,100 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'user/styles/style.css' %}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>Applicant Page | Catch Cunning</title>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="https://kit.fontawesome.com/64760829c9.js" crossorigin="anonymous"></script>
-</head>
- 
-{% if user.superintendent == 0 %}   
-<body>
-    <div class="nav-bar">
-        <div class="nav-bar-text">
-            <a class="nav-items" href="{% url 'account_logout' %}">로그아웃</a>
-            <span> | </span>
-            <a class="nav-items" href="{% url 'account_change_password' %}">비밀번호 변경</a>
-        </div>
-        <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
-        <div class="nav-bar-text">
-            <button class="inside-nav" id="capture-btn" type="button"><i class="fa-solid fa-camera"></i> 화면캡처</button>
-            <span style="font-size: 24px;">{{user.nickname}}</span>
-            <span>님 반갑습니다.</span>
-        </div>
-    </div>
+{% extends 'base.html'%}
 
-    <h1 class="title">시험장에 입장하기 전에...</h1>
-    <div class="prescript">
-        <div id="caution">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            <h3 style="font-size: 40px; text-align: center;"> 주의 사항 </h3>
-            <i class="fa-solid fa-triangle-exclamation"></i>
-        </div>
-        <p style="font-size: 25px;">
-            부정행위 하지마<br>
-            컨닝하지마<br>
-            부정행위 감지되면 시험 종료됨!
-        </p>
+{% block content %}
+
+<div class="nav-bar">
+    <div class="nav-bar-text">
+        <a class="nav-items" href="{% url 'account_logout' %}">로그아웃</a>
+        <span> | </span>
+        <a class="nav-items" href="{% url 'account_change_password' %}">비밀번호 변경</a>
     </div>
-    <form id="user_form" method="POST" action="{% url 'meeting:' %}">
-        {% csrf_token %}
-        <div class="assent">
-            <input type="checkbox" id="agree_to_prescript">
-            <label for="agree_to_prescript">위 주의사항을 숙지하였습니다.</label>
-        </div>
-        <input disabled type="text" id="enter_room" name="enter_room" placeholder="방 입장 코드를 입력하세요.">
-        <input type="text" name="{{user.nickname}}" hidden>
-        <button disabled type="submit" id="join" class="hidden" >시험장 입장</button>
-    </form>
-    <footer>
-        <div class="page-footer">
-            <a href='https://github.com/Non-face-to-face-examination-platform' target='_blank'>
-                <i class="fa-brands fa-github fa-lg"></i>
-                 Github</a>
-            <span>팀명 : 소개팅 나갈 사람</span>
-            <span>만든사람 : 김두현, 원준영, 최재혁</span>
-            <span>Special Thanks to  김재현</span>
-        </div>
-    </footer>
-</body>
-<script type="text/javascript" src="{% static 'user/js/screenCapture.js' %}"></script>
+    <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
+    <div class="nav-bar-text">
+        <button class="inside-nav" id="capture-btn" type="button"><i class="fa-solid fa-camera"></i> 화면캡처</button>
+        <span style="font-size: 24px;">{{user.nickname}}</span>
+        <span>님 반갑습니다.</span>
+    </div>
+</div>
+
+{% if user.superintendent == 0 %}
+
+<h1 class="title">시험장에 입장하기 전에...</h1>
+<div class="prescript">
+    <div id="caution">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <h3 style="font-size: 40px; text-align: center;"> 주의 사항 </h3>
+        <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+    <p style="font-size: 25px;">
+        부정행위 하지마<br>
+        컨닝하지마<br>
+        부정행위 감지되면 시험 종료됨!
+    </p>
+</div>
+<form id="user_form" method="POST" action="{% url 'meeting:' %}">
+    {% csrf_token %}
+    <div class="assent">
+        <input type="checkbox" id="agree_to_prescript">
+        <label for="agree_to_prescript">위 주의사항을 숙지하였습니다.</label>
+    </div>
+    <input disabled type="text" id="enter_room" name="enter_room" placeholder="방 입장 코드를 입력하세요.">
+    <input type="text" name="{{user.nickname}}" hidden>
+    <button disabled type="submit" id="join" class="hidden">시험장 입장</button>
+</form>
 <script>
     const isAssented = document.getElementById("agree_to_prescript");
     const joinBtn = document.getElementById("join");
     const inputCode = document.getElementById("enter_room");
     const user_form = document.getElementById("user_form");
 
-    isAssented.addEventListener('change', () =>{
-        if(isAssented.checked){
+    isAssented.addEventListener('change', () => {
+        if (isAssented.checked) {
             joinBtn.removeAttribute('disabled');
             inputCode.removeAttribute('disabled');
             joinBtn.classList.remove("hidden");
         }
-        else{
+        else {
             joinBtn.setAttribute('disabled', "");
             inputCode.setAttribute('disabled', "");
             joinBtn.classList.add("hidden");
-    }});
+        }
+    });
 </script>
-</html>
+
 {% else %}
-<body>
-    <div class="nav-bar">
-        <div class="nav-bar-text">
-            <a class="nav-items" href="{% url 'account_logout' %}">로그아웃</a>
-            <span> | </span>
-            <a class="nav-items" href="{% url 'account_change_password' %}">비밀번호 변경</a>
-        </div>
-        <div><a class="nav-items" id="title-logo">Catch Cunning</a></div>
-        <div class="nav-bar-text">
-            <button class="inside-nav" id="capture-btn" type="button"><i class="fa-solid fa-camera"></i> 화면캡처</button>
-            <span style="font-size: 24px;">{{user.nickname}}</span>
-            <span>님 반갑습니다.</span>
-        </div>
+
+<h2 class="title">환영합니다, 감독관님!</h2>
+<div class="super-setting">
+    <div style="position: relative;">
+        <input id="random_code" readonly placeholder="방 입장 코드가 여기에 생성됩니다." value="임시코드">
+        <button id="copy-btn"><i class="fa-regular fa-copy fa-xl" onclick="copy_to_clipboard()"></i></button>
+
+        <button type="button" onclick="change()">코드 생성</button>
+        <script type="text/javascript">
+            function change() {
+                document.getElementById('random_code').value = "{{roomId}}";
+            }
+        </script>
     </div>
-    <h2 class="title">환영합니다, 감독관님!</h2>
-    <div class="super-setting">
-        <div style="position: relative;">
-            <input id="random_code" readonly placeholder="방 입장 코드가 여기에 생성됩니다." value="임시코드">
-            <button id="copy-btn"><i class="fa-regular fa-copy fa-xl" onclick="copy_to_clipboard()"></i></button>
-            
-            <button type="button" onclick="change()">코드 생성</button>
-            <script type="text/javascript">
-                function change(){
-                    document.getElementById('random_code').value="{{roomId}}";
-                }
-            </script>
-        </div>
-        <form method="POST" action="{% url 'upLoad' %}" enctype="multipart/form-data" style="display: flex; position:relative">
+    <form method="POST" action="{% url 'upLoad' %}" enctype="multipart/form-data"
+        style="display: flex; position:relative">
+        {% csrf_token %}
+
+        <div class="preview">업로드할 문제 파일을 선택하세요.</div>
+        <label for="question_uploads" id="file-search-btn"><i class="fa-regular fa-image fa-2xl"></i></label>
+        <input type="text" id="room_id" name="room_id" value="{{roomId}}" hidden>
+        <input type="file" id="question_uploads" name="question_uploads" accept=".jpg, .jpeg, .png" multiple hidden>
+        <button type="submit" style="margin-left: 5px;">파일 업로드</button>
+    </form>
+    <div>
+        <form id="supervisor_form" method="POST" action="{% url 'meeting:' %}">
             {% csrf_token %}
-        
-            <div class="preview">업로드할 문제 파일을 선택하세요.</div>
-            <label for="question_uploads" id="file-search-btn"><i class="fa-regular fa-image fa-2xl"></i></label>
-            <input type="text" id="room_id" name="room_id" value="{{roomId}}" hidden> 
-            <input type="file" id="question_uploads" name="question_uploads" accept=".jpg, .jpeg, .png" multiple hidden>
-            <button type="submit" style="margin-left: 5px;">파일 업로드</button>
-        </form>
-        <div>
-        <form id="supervisor_form" method="POST" action="{% url 'meeting:' %}">    
-            {% csrf_token %}
-            <input type="text" id="create_room" name="create_room"  placeholder="방 입장 코드를 입력하세요.">
+            <input type="text" id="create_room" name="create_room" placeholder="방 입장 코드를 입력하세요.">
             <button type="submit">방 생성하기</button>
         </form>
-        </div>
-
     </div>
-    <footer>
-        <div class="page-footer">
-            <a href='https://github.com/Non-face-to-face-examination-platform' target='_blank'>
-                <i class="fa-brands fa-github fa-lg"></i>
-                 Github</a>
-            <span>팀명 : 소개팅 나갈 사람</span>
-            <span>만든사람 : 김두현, 원준영, 최재혁</span>
-            <span>Special Thanks to  김재현</span>
-        </div>
-    </footer>
-</body>
-<script type="text/javascript" src="{% static 'user/js/screenCapture.js' %}"></script>
+</div>
+
 <script>
     function copy_to_clipboard() {
         const copyText = document.getElementById('random_code');
@@ -172,5 +124,7 @@
         }
     }
 </script>
-</html>
+
 {% endif %}
+
+{% endblock %}

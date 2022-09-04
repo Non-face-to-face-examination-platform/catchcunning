@@ -1,61 +1,35 @@
-{% load static %}
-{% load widget_tweaks %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'user/styles/style.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/64760829c9.js" crossorigin="anonymous"></script>
-    <title>Sign Up | Catch Cunning</title>
-</head>
+{% block content %}
 
-<body>
-    <div class="nav-bar" style="justify-content: center;">
-      <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
+<div class="nav-bar" style="justify-content: center;">
+  <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
+</div>
+<h2 class="title">계정을 생성합니다</h2>
+<form method="post">
+  {% csrf_token %}
+    <div class="signup-forms">
+      {{form.email|attr:"placeholder:이메일"|add_error_class:"error" }}
+      {% for error in form.email.errors %}
+        <div class="error-message">{{ error }}</div>
+      {% endfor %}
+      {{form.nickname|attr:"placeholder:이름"|add_error_class:"error" }}
+      {% for error in form.nickname.errors %}
+        <div class="error-message">{{ error }}</div>
+      {% endfor %}
+      {{form.password1|attr:"placeholder:비밀번호"|add_error_class:"error" }}
+      {% for error in form.password1.errors %}
+        <div class="error-message">{{ error }}</div>
+      {% endfor %}
+      {{form.password2|attr:"placeholder:비밀번호 확인"|add_error_class:"error" }}
+      {% for error in form.password2.errors %}
+        <div class="error-message">{{ error }}</div>
+      {% endfor %}
+      <div class="checkbox_div">
+        {{form.superintendent|add_class:"check_if_supervisor"|attr:"name:"}}   감독관으로 회원가입
+      </div>
+        <button type="submit">Sign Up</button>
     </div>
-    <h2 class="title">계정을 생성합니다</h2>
-    <form method="post">
-      {% csrf_token %}
-        <div class="signup-forms">
-          {{form.email|attr:"placeholder:이메일"|add_error_class:"error" }}
-          {% for error in form.email.errors %}
-            <div class="error-message">{{ error }}</div>
-          {% endfor %}
-          {{form.nickname|attr:"placeholder:이름"|add_error_class:"error" }}
-          {% for error in form.nickname.errors %}
-            <div class="error-message">{{ error }}</div>
-          {% endfor %}
-          {{form.password1|attr:"placeholder:비밀번호"|add_error_class:"error" }}
-          {% for error in form.password1.errors %}
-            <div class="error-message">{{ error }}</div>
-          {% endfor %}
-          {{form.password2|attr:"placeholder:비밀번호 확인"|add_error_class:"error" }}
-          {% for error in form.password2.errors %}
-            <div class="error-message">{{ error }}</div>
-          {% endfor %}
-          <div class="checkbox_div">
-            {{form.superintendent|add_class:"check_if_supervisor"|attr:"name:"}}   감독관으로 회원가입
-          </div>
-            <button type="submit">Sign Up</button>
-        </div>
-    </form>
-    <footer>
-        <div class="page-footer">
-            <a href='https://github.com/Non-face-to-face-examination-platform' target='_blank'>
-                <i class="fa-brands fa-github fa-lg"></i>
-                 Github</a>
-            <span>팀명 : 소개팅 나갈 사람</span>
-            <span>만든사람 : 김두현, 원준영, 최재혁</span>
-            <span>Special Thanks to  김재현</span>
-        </div>
-    </footer>
-</body>
-</html>
+</form>
 
+{% endblock %}

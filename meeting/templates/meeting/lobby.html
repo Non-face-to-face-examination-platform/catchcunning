@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lobby</title>
+    <title>Catch Cunning</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -25,6 +25,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
 
   <body>
@@ -38,8 +39,8 @@
         <h1>이곳은 로비입니다.</h1>
         <p>
           시작 전 시험에 응시할 준비를 해주시기 바랍니다.<br />
-          문제 불러오기 버튼을 눌러서 문제를 업로드합니다.<br />
-          준비가 끝났다면 Join Stream을 눌러 시험장에 입장하세요.
+          문제 불러오기 버튼을 눌러서 문제를 다운로드합니다.<br />
+          문제를 불러오고 Join Stream을 눌러 시험장에 입장하세요.
         </p>
       </div>
       {% if user.superintendent == 0 %}
@@ -113,9 +114,18 @@
       <script>
         const pullQuestionsBtn = document.getElementById("pull-questions");
         const joinBtn = document.getElementById("join-btn");
-        pullQuestionsBtn.addEventListener("click", () => {
-          joinBtn.removeAttribute("disabled");
-          joinBtn.classList.remove("disabled");
+
+        console.log("{{presence}}");
+        console.log("{{user.testPath}}");
+        console.log("시발");
+
+        pullQuestionsBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if ("{{presence}}" == 1) {
+            console.log("hi");
+            joinBtn.removeAttribute("disabled");
+            joinBtn.classList.remove("disabled");
+          }
         });
       </script>
       {% else %}
