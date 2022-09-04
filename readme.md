@@ -2,6 +2,13 @@
 
 # 비대면 시험 응시 플랫폼 ‘Catch Cunning’
 
+### 만든사람들
+##### [Backend] [김두현](https://github.com/hyudussaya)  [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:kksy4511@naver.com)](mailto:kksy4511@naver.com)
+	
+##### [Frontend] [원준영](https://github.com/Junyoung-WON) [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:wjyo60@gmail.com)](mailto:wjyo60@gmail.com)
+##### [Backend, ML] [최재혁](https://github.com/jjaegii) [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:hn06038@gmail.com)](mailto:hn06038@gmail.com)
+##### special thanks to [김재현](https://github.com/Grodned) [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:goodshs335@gmail.com)](mailto:goodshs335@gmail.com)
+
 ## 1. 아이디어 소개
 
   비대면 면접, 회의, 시험 등이 COVID-19 감염병으로 인해 사용이 많이 되었고, 아직까지도 그 편리함으로 인해 사용되고 있다. 그러나, 편리함의 이면에는 대면 시험과 달리 감독관이 부정행위를 탐지하고 여러 응시자의 화면을 지켜보는 것이 힘들다는 단점이 있다.
