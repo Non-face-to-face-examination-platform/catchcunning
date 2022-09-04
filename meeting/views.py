@@ -22,6 +22,12 @@ def lobby(request):
         context['room_name'] = request.POST.get('create_room', '')
     else:
         context['room_name'] = request.POST.get('enter_room', '')
+        try:
+            context['image'] = Post.objects.get(fileName=context['room_name'])
+            request.user.testPath = context['image'].image
+            request.user.save()
+        except Post.DoesNotExist:
+            return render(request, 'user/invalid.html')
     return render(request, 'meeting/lobby.html', context)
 
 
@@ -51,23 +57,23 @@ def supervisorRoom(request):
     return render(request, 'meeting/supervisor_room.html')
 
 
-def getImageName(request):
-    print("이미지")
-    context = dict()
-    context['presence'] = 0
-    if request.method == 'POST':
-        fileName = request.POST.get('room_name', '')
-        try:
-            print("성공")
-            context['image'] = Post.objects.get(fileName=fileName)
-            request.user.testPath = context['image'].image
-            request.user.save()
-            context['presence'] = 1
-            return render(request, 'meeting/lobby.html', context=context)
-        except Post.DoesNotExist:
-            context['presence'] = 0
-            print("실패")
-            return render(request, 'meeting/lobby.html', context=context)
+# def getImageName(request):
+#     print("이미지")
+#     context = dict()
+#     context['presence'] = 0
+#     if request.method == 'POST':
+#         fileName = request.POST.get('room_name', '')
+#         try:
+#             print("성공")
+#             context['image'] = Post.objects.get(fileName=fileName)
+#             request.user.testPath = context['image'].image
+#             request.user.save()
+#             context['presence'] = 1
+#             return render(request, 'meeting/lobby.html', context=context)
+#         except Post.DoesNotExist:
+#             context['presence'] = 0
+#             print("실패")
+#             return render(request, 'meeting/lobby.html', context=context)
 
 
 def getToken(request):

@@ -37,8 +37,9 @@ message = alarm.replace("meeting/kakaoAlarm.py", "")
 #     sys.exit()
 
 
+
 text = "나에게 보내는 카톡: " + message
-KAKAO_TOKEN = 'hbMIfEbVMXYnvukOHRjf2uBVlPp0rQOeewUEc-GgCj1zGAAAAYLX3t4F'
+KAKAO_TOKEN = '0xq_Ag6t2tvVSej9tdSieMF8_yYBRbhnx83QGizoCil1KQAAAYMHcEif'
 
 print(sendToMeMessage(text).text)
 

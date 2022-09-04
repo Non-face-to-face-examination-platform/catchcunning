@@ -46,13 +46,7 @@
       {% if user.superintendent == 0 %}
       <!-- 응시자 로그인 -->
 
-      <form method="post" action="{% url 'meeting:getImageName' %}">
-        {% csrf_token %}
-        <input name="room_name" value="{{room_name}}" hidden />
-        <button type="submit" class="lby-btn" id="pull-questions">
-          문제 불러오기
-        </button>
-      </form>
+      
 
       <form id="form">
         <div class="field-wrapper">
@@ -76,12 +70,7 @@
           </div>
 
           <div class="form-field">
-            <button
-              type="submit"
-              class="lby-btn disabled"
-              id="join-btn"
-              disabled
-            >
+            <button type="submit" class="lby-btn" id="join-btn">
               Join Stream
             </button>
           </div>

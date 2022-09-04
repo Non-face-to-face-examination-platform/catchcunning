@@ -1,35 +1,36 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
 
-<div class="nav-bar" style="justify-content: center;">
-  <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
-</div>
-<h1 class="main-title">Catch Cunning</h1>
-<form method="post">
-  {% csrf_token %}
+    <div class="nav-bar" style="justify-content: center;">
+      <div><a class="nav-items" id="title-logo" href="{% url 'index' %}">Catch Cunning</a></div>
+    </div>
+    <h1 class="main-title">Catch Cunning</h1>
+    <form method="post">
+      {% csrf_token %}
 
-  {% for error in form.non_field_errors %}
-  <div class="form-error error-message">{{ error }}</div>
-  {% endfor %}
+      {% for error in form.non_field_errors %}
+        <div class="form-error error-message">{{ error }}</div>
+      {% endfor %}
 
-  <div class="login-forms">
-    {{ form.login|add_class:"cp-input"|attr:"placeholder:이메일"|add_error_class:"error" }}
-    {% for error in form.login.errors %}
-    <div class="form-error error-message">{{ error }}</div>
-    {% endfor %}
-    {{ form.password|add_class:"cp-input"|attr:"placeholder:비밀번호"|add_error_class:"error" }}
-    {% for error in form.password.errors %}
-    <div class="form-error error-message">{{ error }}</div>
-    {% endfor %}
+        <div class="login-forms">
+          {{ form.login|add_class:"cp-input"|attr:"placeholder:이메일"|add_error_class:"error" }}
+          {% for error in form.login.errors %}
+            <div class="form-error error-message">{{ error }}</div>
+          {% endfor %}
+          {{ form.password|add_class:"cp-input"|attr:"placeholder:비밀번호"|add_error_class:"error" }}       
+          {% for error in form.password.errors %}
+            <div class="form-error error-message">{{ error }}</div>
+          {% endfor %}
+            
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <div class="info">
+        <a>계정이 없으신가요?</a>
+        <a href="{% url 'account_signup' %}" >회원가입</a>
+    </div>
 
-    <button type="submit">Login</button>
-  </div>
-</form>
-<div class="info">
-  <a class="item" href="{% url 'account_reset_password' %}">비밀번호 찾기</a>
-  <span class="item"> | </span>
-  <a class="item" href="{% url 'account_signup' %}">회원가입</a>
-</div>
+    {% endblock %}
 
-{% endblock %}

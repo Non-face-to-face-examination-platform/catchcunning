@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     padding-bottom: 70px;
-    margin: 0px;    /**/
+    margin: 0px;
 }
 
 button {
@@ -209,13 +209,13 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    align-items: baseline;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-.item{
-    width: 150px;
+.info a{
+    margin-right: 20px;
     text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
     font-size: 20px;
 
 }
