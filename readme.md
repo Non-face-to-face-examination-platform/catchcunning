@@ -1,6 +1,7 @@
 # SW개발보안 경진대회(소개딩 해커톤)
 
 # 비대면 시험 응시 플랫폼 ‘Catch Cunning’
+in [Notion](https://www.notion.so/readme-fa3486fa7ee74676a9f6f260317dfa71)
 
 ### 만든사람들
 ##### [Backend] [김두현](https://github.com/hyudussaya)  [![Gmail Badge](https://img.shields.io/badge/Gmail-d14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:kksy4511@naver.com)](mailto:kksy4511@naver.com)
