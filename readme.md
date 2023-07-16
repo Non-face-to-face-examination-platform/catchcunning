@@ -4,16 +4,6 @@
 
 노션에서 읽으시고 싶으시다면 -> [Catch Cunning in Notion](https://www.notion.so/readme-fa3486fa7ee74676a9f6f260317dfa71)
 
-### 만든사람들
-
-##### [Backend] [김두현](https://github.com/hyudussaya)
-
-##### [Frontend] [원준영](https://github.com/Junyoung-WON)
-
-##### [Backend, ML] [최재혁](https://github.com/jjaegii)
-
-##### special thanks to [김재현](https://github.com/Grodned)
-
 ## 1. 아이디어 소개
 
 비대면 면접, 회의, 시험 등이 COVID-19 감염병으로 인해 사용이 많이 되었고, 아직까지도 그 편리함으로 인해 사용되고 있다. 그러나, 편리함의 이면에는 대면 시험과 달리 감독관이 부정행위를 탐지하고 여러 응시자의 화면을 지켜보는 것이 힘들다는 단점이 있다.
@@ -23,20 +13,20 @@
 
 **2.1. API/라이브러리/framework**
 
-- Django
-- ml5.js
-- agora api
-- kakakotalk api
-- MySQL
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![ML5JS](https://img.shields.io/badge/ml5.js-ED225D?style=for-the-badge&logo=p5.js&logoColor=white)
+![Agora](https://img.shields.io/badge/agora_api-099DFD?style=for-the-badge&logo=agora&logoColor=white)
+![kakaotalk](https://img.shields.io/badge/kakaotalk_api-FFCD00?style=for-the-badge&logo=kakaotalk&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 **2.2. 배포**
 
 ~~[catchcunning.site](http://catchcunning.site)~~
 
-- AWS EC2
-- AWS SES
-- uWSGI
-- NginX
+![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white)
+![AWS SES](https://img.shields.io/badge/AWS_SES-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![uWSGI](https://img.shields.io/badge/uwsgi-00BF6F?style=for-the-badge&)
+![NginX](https://img.shields.io/badge/NGinX-009639?style=for-the-badge&logo=nginx&logoColor=white)
 
 ## 3. 기능 설명
 
@@ -81,7 +71,6 @@ Google Meet, Zoom과 같은 webRTC 기능을 사용하기 위해 agora의 API를
 agora api 토큰 발급 및 사용 : [https://github.com/divanov11/mychat](https://github.com/divanov11/mychat)
 
 ```bash
-
 $ pip install -r requirements.txt
 $ python3 manage.py runsslserver 0:3000 --certificate django.crt --key django.key
 ```
@@ -149,3 +138,39 @@ $ python3 manage.py runsslserver 0:3000 --certificate django.crt --key django.ke
 - 부정행위 2 (전체화면 해제)
 
 ![Untitled 13](https://user-images.githubusercontent.com/77189999/188304229-59552860-5844-4d0f-8e49-85bb5b3e257e.png)
+
+### 만든사람들
+
+<table border="1">
+    <th>
+        <img src="https://img.shields.io/badge/frontend-02569B?style=for-the-badge&logo=flutter&logoColor=white"></img>
+    </th>
+    <th>
+        <img src="https://img.shields.io/badge/backend-092E20?style=for-the-badge&logo=django&logoColor=white"></img>
+    </th>
+    <th>
+        <img src="https://img.shields.io/badge/backend-092E20?style=for-the-badge&logo=django&logoColor=white"></img>
+        <img src="https://img.shields.io/badge/ML-ED225D?style=for-the-badge&logo=p5.js&logoColor=white"></img>
+    </th>
+    <th>
+        <img src="https://img.shields.io/badge/Special Thanks-000000?style=for-the-badge"></img>
+    </th>
+    <tr>
+        <td align="center">
+            <img src="https://avatars.githubusercontent.com/u/92203597?v=4" width="100px;"> <br/>
+            <a href="https://github.com/Junyoung-WON">원준영</a>
+        </td>
+        <td align="center">
+            <img src="https://avatars.githubusercontent.com/u/102767676?v=4" width="100px;"> <br/>
+            <a href="https://github.com/iamdudumon">김두현</a>
+        </td>
+        <td align="center">
+            <img src="https://avatars.githubusercontent.com/u/77189999?v=4" width="100px;"> <br/>
+            <a href="https://github.com/jjaegii">최재혁</a>
+        </td>
+        <td align="center">
+            <img src="https://avatars.githubusercontent.com/u/84281599?v=4" width="100px;"> <br/>
+            <a href="https://github.com/Gordned">김재현</a>
+        </td>
+    </tr>
+</table>
