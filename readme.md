@@ -1,12 +1,12 @@
-![image](https://github.com/Non-face-to-face-examination-platform/catchcunning/assets/102767676/4b5007af-f198-476e-9cae-2660e067b474)# SW개발보안 경진대회(소개딩 해커톤)
+# SW개발보안 경진대회(소개딩 해커톤)
 
 # 비대면 시험 응시 플랫폼 ‘Catch Cunning’
 
 노션에서 읽으시고 싶으시다면 -> [Catch Cunning in Notion](https://www.notion.so/readme-fa3486fa7ee74676a9f6f260317dfa71)
 
 #### 소개딩 수상 기사
-- ![Article](https://www.etnews.com/20220901000170)
-- ![학과 소식](https://cse.yu.ac.kr/cse/community/news.do?mode=view&articleNo=6814205&article.offset=0&articleLimit=10)
+- [Article](https://www.etnews.com/20220901000170)
+- [학과 소식](https://cse.yu.ac.kr/cse/community/news.do?mode=view&articleNo=6814205&article.offset=0&articleLimit=10)
 
 
 ## 1. 아이디어 소개
