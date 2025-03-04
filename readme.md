@@ -43,7 +43,8 @@ Google Meet, Zoom과 같은 webRTC 기능을 사용하기 위해 agora의 API를
 
 실제 대면 시험장 수준의 관리감독 기능을 최대한 구현하여, 온라인 시험 환경에서도 모두가 공정한 시험을 치를 수 있다. 응시자 모두가 노력한 만큼의 공정한 결과를 얻을 수 있기를 바란다.
 
-카카오톡 API를 활용하여, 사용자가 사이트에 접속하거나 로그인을 하면 서버 관리자에게 카카오톡으로 알림을 보내어 사이트에 누가 접속하였는지 확인할 수 있도록 하였다.
+> 해커톤 돌발 미션
+> - 카카오톡 API를 활용하여, 사용자가 사이트에 접속하거나 로그인을 하면 서버 관리자에게 카카오톡으로 알림을 보내어 사이트에 누가 접속하였는지 확인 가능
 
 사이트 상단의 ‘화면 캡쳐’ 버튼을 누르면 캡쳐된 화면 이미지가 관리자 이메일로 전송되게 하였다. 혹시나 사이트에서 기능의 문제가 발생하면 사용자는 버튼을 클릭하여 관리자에게 캡쳐한 화면 이미지를 이메일로 보낼 수 있고, 관리자는 무슨 문제가 있는지를 신속하게 확인할 수 있다.
 
@@ -77,6 +78,8 @@ agora api 토큰 발급 및 사용 : [https://github.com/divanov11/mychat](https
 
 ```bash
 $ pip install -r requirements.txt
+$ python3 manage.py makemigrations # skip 가능
+$ python3 manage.py migrate
 $ python3 manage.py runsslserver 0:3000 --certificate django.crt --key django.key
 ```
 
